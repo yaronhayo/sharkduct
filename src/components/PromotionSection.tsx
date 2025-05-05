@@ -1,73 +1,117 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { PhoneCall } from 'lucide-react';
 
 const PromotionSection = () => {
   const promotions = [
     {
-      title: "New Customer Special",
-      discount: "$50 OFF",
-      description: "First-time customers save $50 on any duct cleaning service.",
-      code: "NEWCUST50",
-      expires: "Valid until June 30, 2025",
-      bgColor: "bg-gradient-to-r from-shark-blue to-shark-lightBlue"
+      title: "Air Duct Cleaning Special",
+      price: "$89",
+      originalPrice: "$199",
+      description: "Complete air duct cleaning service for healthier living spaces.",
+      benefits: [
+        "Improves indoor air quality",
+        "Removes dust, allergens & contaminants",
+        "Unlimited vents, limited time only!"
+      ]
     },
     {
-      title: "Whole Home Package",
-      discount: "$100 OFF",
-      description: "Complete duct and dryer vent cleaning package.",
-      code: "WHOLEHOME100",
-      expires: "Valid until July 15, 2025",
-      bgColor: "bg-gradient-to-r from-shark-darkBlue to-shark-blue"
+      title: "Dryer Vent Cleaning",
+      price: "$85",
+      originalPrice: "$150",
+      description: "Professional dryer vent cleaning service for safety and efficiency.",
+      benefits: [
+        "Prevents potential fire hazards",
+        "Improves dryer efficiency",
+        "Extends appliance lifespan"
+      ]
     },
     {
-      title: "Seasonal Special",
-      discount: "20% OFF",
-      description: "Spring cleaning special on all services.",
-      code: "SPRING20",
-      expires: "Valid until May 31, 2025",
-      bgColor: "bg-gradient-to-r from-green-600 to-emerald-500"
-    },
-    {
-      title: "Referral Reward",
-      discount: "$25 OFF",
-      description: "For you and the friend you refer to us.",
-      code: "REFERRAL25",
-      expires: "Never expires",
-      bgColor: "bg-gradient-to-r from-purple-600 to-indigo-600"
+      title: "Full Chimney Inspection",
+      price: "$49",
+      originalPrice: "$99",
+      description: "Comprehensive chimney inspection by certified professionals.",
+      benefits: [
+        "Identifies structural issues",
+        "Prevents dangerous blockages",
+        "Includes detailed safety report"
+      ]
     }
   ];
 
   return (
     <section id="promotions" className="section-padding bg-white">
       <div className="container mx-auto">
-        <h2 className="section-title">Exclusive Promotions</h2>
+        <h2 className="section-title">Special Offers</h2>
         <p className="section-subtitle">
-          Take advantage of these limited-time offers to save on our professional cleaning services.
-          Simply mention the promo code when you call to schedule.
+          Take advantage of these limited-time promotional offers on our professional cleaning services.
+          Call today to schedule your appointment and mention these promotions.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           {promotions.map((promo, index) => (
-            <div 
-              key={index} 
-              className={`rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl`}
-            >
-              <div className={`${promo.bgColor} p-6 text-white`}>
-                <h3 className="text-xl font-bold mb-2">{promo.title}</h3>
-                <div className="text-4xl font-bold mb-2">{promo.discount}</div>
-                <p className="text-sm text-white/80 mb-4">{promo.description}</p>
-              </div>
-              
-              <div className="bg-white p-6">
-                <div className="bg-gray-100 rounded-md p-3 text-center mb-4">
-                  <p className="text-sm text-gray-500">Promo Code:</p>
-                  <p className="text-lg font-bold text-shark-darkBlue">{promo.code}</p>
+            <div key={index} className="relative overflow-hidden">
+              {/* Coupon design inspired by the provided image */}
+              <div className="flex rounded-lg overflow-hidden shadow-md border border-gray-200">
+                {/* Left side - PROMO tag */}
+                <div className="bg-shark-darkBlue text-white w-16 flex flex-col items-center justify-center relative">
+                  <span className="font-bold text-xs tracking-wider uppercase rotate-[-90deg] whitespace-nowrap">PROMO</span>
+                  {/* Dotted line */}
+                  <div className="absolute right-0 top-0 bottom-0 border-r border-dashed border-white h-full"></div>
+                  {/* Circular cutouts */}
+                  <div className="absolute w-6 h-6 bg-white rounded-full -right-3 -top-3"></div>
+                  <div className="absolute w-6 h-6 bg-white rounded-full -right-3 -bottom-3"></div>
                 </div>
-                <p className="text-xs text-gray-500 text-center mb-4">{promo.expires}</p>
-                <Button className="w-full bg-shark-blue hover:bg-shark-darkBlue">
-                  Claim Offer
-                </Button>
+                
+                {/* Center - Main content */}
+                <div className="flex-1 flex flex-col bg-shark-darkBlue text-white px-4 py-6">
+                  {/* Price banner with original and sale price */}
+                  <div className="bg-black py-2 px-4 mb-4 -mx-4">
+                    <div className="flex items-baseline">
+                      <span className="text-3xl font-bold mr-3">SALE {promo.price}</span>
+                      <span className="text-xl line-through text-red-500">{promo.originalPrice}</span>
+                    </div>
+                  </div>
+                  
+                  {/* Service name */}
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 uppercase text-center">
+                    {promo.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm mb-4 text-white/90 text-center">
+                    {promo.description}
+                  </p>
+                  
+                  {/* Feature list */}
+                  <ul className="mb-4 text-sm">
+                    {promo.benefits.map((benefit, i) => (
+                      <li key={i} className="mb-2 flex items-start">
+                        <span className="mr-2 text-white">✓</span>
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Button 
+                    className="mt-auto w-full bg-shark-blue hover:bg-shark-accent"
+                    onClick={() => window.location.href='tel:877-652-4343'}
+                  >
+                    <PhoneCall className="mr-2 h-4 w-4" />
+                    Claim Offer
+                  </Button>
+                </div>
+                
+                {/* Right side - Vertical text */}
+                <div className="bg-white w-16 flex flex-col items-center justify-center relative">
+                  <div className="absolute w-6 h-6 bg-white rounded-full -left-3 -top-3"></div>
+                  <div className="absolute w-6 h-6 bg-white rounded-full -left-3 -bottom-3"></div>
+                  <span className="font-bold text-sm tracking-wider uppercase rotate-90 whitespace-nowrap text-shark-darkBlue">
+                    {promo.title.split(' ').slice(0, 2).join(' ')}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
@@ -83,11 +127,16 @@ const PromotionSection = () => {
                 Speak with our friendly experts today. We'll help you understand your options with no pressure.
               </p>
               <p className="text-sm text-gray-500">
-                *Limited time offer.
+                *Promotions valid for limited time. Cannot be combined with other offers.
               </p>
             </div>
             <div className="flex-shrink-0">
-              <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white font-bold px-8">
+              <Button 
+                size="lg" 
+                className="bg-shark-accent hover:bg-shark-blue text-white font-bold px-8"
+                onClick={() => window.location.href='tel:877-652-4343'}
+              >
+                <PhoneCall className="mr-2 h-4 w-4" />
                 Get Free Advice
               </Button>
             </div>
