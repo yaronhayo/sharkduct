@@ -34,6 +34,12 @@ const Navbar = () => {
               alt="Shark Duct Cleaning" 
               className="h-16 md:h-20 mr-3" 
             />
+            {/* Logo Text */}
+            <span className={`font-bold text-xl md:text-2xl transition-colors ${
+              isScrolled ? 'text-shark-darkBlue' : 'text-white'
+            }`}>
+              Shark Duct Cleaning
+            </span>
           </a>
         </div>
 
