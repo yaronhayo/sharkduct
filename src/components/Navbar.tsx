@@ -29,9 +29,11 @@ const Navbar = () => {
         <div className="flex items-center">
           <a href="/" className="flex items-center">
             {/* Logo */}
-            <div className="text-2xl font-bold text-shark-darkBlue">
-              <span className="text-shark-blue">Shark</span> Duct Cleaning
-            </div>
+            <img 
+              src="https://sharkduct.com/wp-content/uploads/2023/10/shark-duct.png" 
+              alt="Shark Duct Cleaning" 
+              className="h-12 mr-3" 
+            />
           </a>
         </div>
 
