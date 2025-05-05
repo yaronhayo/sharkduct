@@ -53,7 +53,7 @@ const CTASection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-lg">
                 <CalendarDays className="mr-2 h-5 w-5" />
-                Call For Free Inspection
+                Book Free Inspection
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg">
                 <Phone className="mr-2 h-5 w-5" />

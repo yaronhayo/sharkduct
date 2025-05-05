@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const Hero = () => {
   return (
-    <div className="relative bg-gradient-to-r from-shark-darkBlue to-shark-blue pt-24 pb-16 md:py-24">
+    <div className="relative bg-gradient-to-r from-shark-darkBlue to-shark-blue pt-32 pb-16 md:py-32">
       {/* Background overlay pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAtMzR2NmgxOHYtNmgtMTh6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2Nmg2di02aC02em0wIDI0djZoNnYtNmgtNnptMTIgLTI0djZoNnYtNmgtNnptMCAxMnY2aDZ2LTZoLTZ6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2NmgxOHYtNmgtMTh6bS00OCAtNDh2NmgxOHYtNmgtMTh6bTAgMTJ2Nmg2di02aC02em0wIDEydjZoMTJ2LTZoLTEyem0wIDEydjZoNnYtNmgtNnptMCAxMnY2aDZ2LTZoLTZ6bTEyIC0yNHY2aDZ2LTZoLTZ6bTAgMTJ2Nmg2di02aC02em0wIDEydjZoNnYtNmgtNnptMTIgLTM2djZoNnYtNmgtNnptMTIgLTEydjZoNnYtNmgtNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-70"></div>
 
@@ -39,7 +39,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-base">
                 <CalendarDays className="mr-2 h-5 w-5" />
-                Call To Inquire About A Free Inspection
+                Book Free Inspection
               </Button>
               <Button size="lg" variant="outline" className="bg-shark-blue hover:bg-shark-darkBlue hover:text-white text-white text-base">
                 <Phone className="mr-2 h-5 w-5" />
@@ -129,7 +129,7 @@ const Hero = () => {
                   
                   <Button className="w-full bg-shark-blue hover:bg-shark-darkBlue text-base py-6">
                     <CalendarDays className="mr-2 h-5 w-5" />
-                    Book Free Inspection Now
+                    Book Free Inspection
                   </Button>
                 </form>
               </CardContent>
