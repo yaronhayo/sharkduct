@@ -58,7 +58,12 @@ const CTASection = () => {
                   Book Free Inspection
                 </Button>
               </BookingDialog>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white bg-white/10 hover:bg-white/20 text-lg"
+                onClick={() => window.location.href='tel:877-652-4343'}
+              >
                 <Phone className="mr-2 h-5 w-5" />
                 <span>Call (877) 652-4343</span>
               </Button>
