@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Shield, Check } from 'lucide-react';
+import { Shield, Check, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -24,8 +24,9 @@ const Hero = () => {
               <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-lg">
                 Get Free Consultation
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg">
-                View Services
+              <Button size="lg" variant="outline" className="bg-shark-blue hover:bg-shark-darkBlue hover:text-white text-white text-lg">
+                <Phone className="mr-2 h-4 w-4" />
+                <span>Call Us Now</span>
               </Button>
             </div>
             
