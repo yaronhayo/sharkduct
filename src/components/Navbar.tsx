@@ -32,20 +32,14 @@ const Navbar = () => {
             <img 
               src="https://sharkduct.com/wp-content/uploads/2023/10/shark-duct.png" 
               alt="Shark Duct Cleaning" 
-              className="h-16 md:h-20 mr-3" 
+              className="h-12 mr-3" 
             />
-            {/* Logo Text */}
-            <span className={`font-bold text-xl md:text-2xl transition-colors ${
-              isScrolled ? 'text-shark-darkBlue' : 'text-white'
-            }`}>
-              Shark Duct Cleaning
-            </span>
           </a>
         </div>
 
         {/* Phone CTA - Kept in the navbar */}
         <div>
-          <Button className={`${isScrolled ? 'bg-shark-blue' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
+          <Button className="bg-shark-blue hover:bg-shark-darkBlue shadow-lg">
             <Phone className="mr-2 h-4 w-4" />
             <span>Call Us Now</span>
           </Button>
