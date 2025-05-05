@@ -11,24 +11,6 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAtMzR2NmgxOHYtNmgtMTh6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2Nmg2di02aC02em0wIDI0djZoNnYtNmgtNnptMTIgLTI0djZoNnYtNmgtNnptMCAxMnY2aDZ2LTZoLTZ6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2NmgxOHYtNmgtMTh6bS00OCAtNDh2NmgxOHYtNmgtMTh6bTAgMTJ2Nmg2di02aC02em0wIDEydjZoMTJ2LTZoLTEyem0wIDEydjZoNnYtNmgtNnptMCAxMnY2aDZ2LTZoLTZ6bTEyIC0yNHY2aDZ2LTZoLTZ6bTAgMTJ2Nmg2di02aC02em0wIDEydjZoNnYtNmgtNnptMTIgLTM2djZoNnYtNmgtNnptMTIgLTEydjZoNnYtNmgtNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-70"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Trust Badges */}
-        <div className="flex justify-center mb-8">
-          <div className="grid grid-cols-3 gap-3 md:gap-6">
-            <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
-              <span className="text-xs font-medium text-shark-accent">NADCA</span>
-              <span className="text-sm font-bold text-white">Certified</span>
-            </div>
-            <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
-              <span className="text-xs font-medium text-shark-accent">18+ Years</span>
-              <span className="text-sm font-bold text-white">Experience</span>
-            </div>
-            <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
-              <span className="text-xs font-medium text-shark-accent">4.9 Stars</span>
-              <span className="text-sm font-bold text-white">2,600+ Reviews</span>
-            </div>
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="text-white">
             <h1 className="text-3xl md:text-4xl font-bold mb-6">
@@ -65,9 +47,25 @@ const Hero = () => {
               </Button>
             </div>
             
-            <div className="flex items-center">
+            <div className="flex items-center mb-8">
               <Shield className="w-6 h-6 text-shark-accent mr-2" />
               <span className="font-semibold">Over 10,000 TX Homes Protected</span>
+            </div>
+
+            {/* Trust Badges - Moved below "Over 10,000 TX Homes Protected" */}
+            <div className="grid grid-cols-3 gap-3 md:gap-6">
+              <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
+                <span className="text-xs font-medium text-shark-accent">NADCA</span>
+                <span className="text-sm font-bold text-white">Certified</span>
+              </div>
+              <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
+                <span className="text-xs font-medium text-shark-accent">18+ Years</span>
+                <span className="text-sm font-bold text-white">Experience</span>
+              </div>
+              <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
+                <span className="text-xs font-medium text-shark-accent">4.9 Stars</span>
+                <span className="text-sm font-bold text-white">2,600+ Reviews</span>
+              </div>
             </div>
           </div>
           
