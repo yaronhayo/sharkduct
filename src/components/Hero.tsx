@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Shield, Check, Phone, CalendarDays } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import BookingDialog from './BookingDialog';
 
 const Hero = () => {
   return (
@@ -37,10 +38,12 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-base">
-                <CalendarDays className="mr-2 h-5 w-5" />
-                Book Free Inspection
-              </Button>
+              <BookingDialog>
+                <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-base">
+                  <CalendarDays className="mr-2 h-5 w-5" />
+                  Book Free Inspection
+                </Button>
+              </BookingDialog>
               <Button size="lg" variant="outline" className="bg-shark-blue hover:bg-shark-darkBlue hover:text-white text-white text-base">
                 <Phone className="mr-2 h-5 w-5" />
                 <span>877-652-4343</span>
@@ -127,10 +130,12 @@ const Hero = () => {
                     </div>
                   </div>
                   
-                  <Button className="w-full bg-shark-blue hover:bg-shark-darkBlue text-base py-6">
-                    <CalendarDays className="mr-2 h-5 w-5" />
-                    Book Free Inspection
-                  </Button>
+                  <BookingDialog trigger={false}>
+                    <Button className="w-full bg-shark-blue hover:bg-shark-darkBlue text-base py-6">
+                      <CalendarDays className="mr-2 h-5 w-5" />
+                      Book Free Inspection
+                    </Button>
+                  </BookingDialog>
                 </form>
               </CardContent>
             </Card>

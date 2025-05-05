@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, CalendarDays } from 'lucide-react';
+import BookingDialog from './BookingDialog';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,10 +40,12 @@ const Navbar = () => {
 
         {/* CTAs */}
         <div className="flex items-center space-x-2">
-          <Button className={`hidden md:flex ${isScrolled ? 'bg-shark-accent text-white' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
-            <CalendarDays className="mr-2 h-4 w-4" />
-            Book Free Inspection
-          </Button>
+          <BookingDialog>
+            <Button className={`hidden md:flex ${isScrolled ? 'bg-shark-accent text-white' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
+              <CalendarDays className="mr-2 h-4 w-4" />
+              Book Free Inspection
+            </Button>
+          </BookingDialog>
           <Button className={`${isScrolled ? 'bg-shark-blue' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
             <Phone className="mr-2 h-4 w-4" />
             <span className="hidden sm:inline">877-652-4343</span>
