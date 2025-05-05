@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Phone } from 'lucide-react';
 
 const ServiceBenefits = () => {
   const ductCleaningBenefits = [
@@ -91,9 +93,12 @@ const ServiceBenefits = () => {
               </div>
               
               <div className="mt-8 flex justify-center">
-                <Button className="bg-shark-blue hover:bg-shark-darkBlue text-lg">
-                  Schedule Duct Cleaning
-                </Button>
+                <a href="tel:8776524343">
+                  <Button className="bg-shark-blue hover:bg-shark-darkBlue text-lg">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Schedule Duct Cleaning
+                  </Button>
+                </a>
               </div>
               
               <div className="mt-6 bg-blue-50 rounded-md p-4">
@@ -136,9 +141,12 @@ const ServiceBenefits = () => {
               </div>
               
               <div className="mt-8 flex justify-center">
-                <Button className="bg-shark-blue hover:bg-shark-darkBlue text-lg">
-                  Schedule Cleaning Service
-                </Button>
+                <a href="tel:8776524343">
+                  <Button className="bg-shark-blue hover:bg-shark-darkBlue text-lg">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Schedule Cleaning Service
+                  </Button>
+                </a>
               </div>
               
               <div className="mt-6 bg-red-50 rounded-md p-4">
@@ -164,9 +172,12 @@ const ServiceBenefits = () => {
           <p className="text-xl text-shark-darkBlue mb-6">
             Professional cleaning isn't just about comfort—it's about protecting your health, home, and finances.
           </p>
-          <Button size="lg" className="bg-shark-yellow hover:bg-yellow-500 text-shark-darkBlue text-lg">
-            Call To Inquire About A Free Inspection
-          </Button>
+          <a href="tel:8776524343">
+            <Button size="lg" className="bg-shark-yellow hover:bg-yellow-500 text-shark-darkBlue text-lg">
+              <Phone className="mr-2 h-5 w-5" />
+              Call To Inquire About A Free Inspection
+            </Button>
+          </a>
         </div>
       </div>
     </section>
