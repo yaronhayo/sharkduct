@@ -44,10 +44,12 @@ const Hero = () => {
                   Book Free Inspection
                 </Button>
               </BookingDialog>
-              <Button size="lg" variant="outline" className="bg-shark-blue hover:bg-shark-darkBlue hover:text-white text-white text-base">
-                <Phone className="mr-2 h-5 w-5" />
-                <span>877-652-4343</span>
-              </Button>
+              <a href="tel:8776524343">
+                <Button size="lg" variant="outline" className="bg-shark-blue hover:bg-shark-darkBlue hover:text-white text-white text-base">
+                  <Phone className="mr-2 h-5 w-5" />
+                  <span>877-652-4343</span>
+                </Button>
+              </a>
             </div>
             
             <div className="flex items-center mb-8">

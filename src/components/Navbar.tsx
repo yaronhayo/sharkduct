@@ -46,10 +46,12 @@ const Navbar = () => {
               Book Free Inspection
             </Button>
           </BookingDialog>
-          <Button className={`${isScrolled ? 'bg-shark-blue' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
-            <Phone className="mr-2 h-4 w-4" />
-            <span className="hidden sm:inline">877-652-4343</span>
-          </Button>
+          <a href="tel:8776524343">
+            <Button className={`${isScrolled ? 'bg-shark-blue' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
+              <Phone className="mr-2 h-4 w-4" />
+              <span className="hidden sm:inline">877-652-4343</span>
+            </Button>
+          </a>
         </div>
       </div>
     </nav>
