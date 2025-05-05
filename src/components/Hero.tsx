@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="text-white">
             <h1 className="text-3xl md:text-4xl font-bold mb-6">
-              Stop Breathing Contaminated Air in Central Texas
+              Is Your Austin Home Hiding Dangerous Air Contaminants?
             </h1>
             
             <p className="text-lg mb-6 text-gray-100">
