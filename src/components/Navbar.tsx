@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone } from 'lucide-react';
+import { Phone, CalendarDays } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,25 +37,10 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Trust Badges */}
-        <div className="hidden md:flex items-center space-x-4">
-          <div className="flex flex-col items-center bg-white/10 rounded-lg px-3 py-1">
-            <span className="text-xs font-medium text-shark-blue">NADCA</span>
-            <span className="text-sm font-bold">Certified</span>
-          </div>
-          <div className="flex flex-col items-center bg-white/10 rounded-lg px-3 py-1">
-            <span className="text-xs font-medium text-shark-blue">18+ Years</span>
-            <span className="text-sm font-bold">Experience</span>
-          </div>
-          <div className="flex flex-col items-center bg-white/10 rounded-lg px-3 py-1">
-            <span className="text-xs font-medium text-shark-blue">4.9 Stars</span>
-            <span className="text-sm font-bold">2,600+ Reviews</span>
-          </div>
-        </div>
-
         {/* CTAs */}
         <div className="flex items-center space-x-2">
           <Button className={`hidden md:flex ${isScrolled ? 'bg-shark-accent text-white' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
+            <CalendarDays className="mr-2 h-4 w-4" />
             Book Free Inspection
           </Button>
           <Button className={`${isScrolled ? 'bg-shark-blue' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone } from 'lucide-react';
+import { Phone, CalendarDays } from 'lucide-react';
 
 const CTASection = () => {
   return (
@@ -52,10 +52,11 @@ const CTASection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-lg">
+                <CalendarDays className="mr-2 h-5 w-5" />
                 Call For Free Inspection
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg">
-                <Phone className="mr-2 h-4 w-4" />
+                <Phone className="mr-2 h-5 w-5" />
                 <span>Call (877) 652-4343</span>
               </Button>
             </div>
