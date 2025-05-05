@@ -13,11 +13,11 @@ const AirQualitySection = () => {
       description: 'Indoor air can be five times more polluted than outdoor air'
     },
     {
-      stat: '50%',
+      stat: '70%',
       description: 'reduction in allergens after proper duct cleaning'
     },
     {
-      stat: '20-40%',
+      stat: '50%',
       description: 'of energy used in homes goes to heating and cooling'
     }
   ];
