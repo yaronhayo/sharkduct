@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { PhoneCall } from 'lucide-react';
+import BookingDialog from './BookingDialog';
 
 const PromotionSection = () => {
   const promotions = [
@@ -95,13 +96,14 @@ const PromotionSection = () => {
                     ))}
                   </ul>
                   
-                  <Button 
-                    className="mt-auto w-full bg-shark-blue hover:bg-shark-accent"
-                    onClick={() => window.location.href='tel:877-652-4343'}
-                  >
-                    <PhoneCall className="mr-2 h-4 w-4" />
-                    Claim Offer
-                  </Button>
+                  <BookingDialog>
+                    <Button 
+                      className="mt-auto w-full bg-shark-blue hover:bg-shark-accent"
+                    >
+                      <PhoneCall className="mr-2 h-4 w-4" />
+                      Claim Offer
+                    </Button>
+                  </BookingDialog>
                 </div>
                 
                 {/* Right side - Vertical text */}
@@ -131,14 +133,15 @@ const PromotionSection = () => {
               </p>
             </div>
             <div className="flex-shrink-0">
-              <Button 
-                size="lg" 
-                className="bg-shark-accent hover:bg-shark-blue text-white font-bold px-8"
-                onClick={() => window.location.href='tel:877-652-4343'}
-              >
-                <PhoneCall className="mr-2 h-4 w-4" />
-                Get Free Advice
-              </Button>
+              <BookingDialog>
+                <Button 
+                  size="lg" 
+                  className="bg-shark-accent hover:bg-shark-blue text-white font-bold px-8"
+                >
+                  <PhoneCall className="mr-2 h-4 w-4" />
+                  Get Free Advice
+                </Button>
+              </BookingDialog>
             </div>
           </div>
         </div>
