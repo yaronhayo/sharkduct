@@ -6,37 +6,37 @@ import { Button } from '@/components/ui/button';
 const reviews = [
   {
     name: "Jennifer L.",
-    location: "Seattle, WA",
+    location: "Austin, TX",
     rating: 5,
-    text: "Shark Duct Cleaning did an amazing job! The technicians were professional, thorough, and explained everything they were doing. I noticed an immediate improvement in my home's air quality. Highly recommend!",
+    text: "Shark Duct Cleaning transformed my home's air quality! After they cleaned our air ducts, I noticed my son's allergies improved dramatically. Their technicians were professional and explained everything. Worth every penny for a healthier home!",
     date: "April 12, 2025"
   },
   {
     name: "Michael T.",
-    location: "Bellevue, WA",
+    location: "San Marcos, TX",
     rating: 5,
-    text: "After Shark cleaned our dryer vent, our clothes dry so much faster! The technician showed me how much lint was built up (it was shocking). Great service and fair pricing.",
+    text: "We had our dryer vent cleaned after noticing clothes were taking longer to dry. The technician showed me how much lint was built up - it was shocking! Now our dryer is efficient again and I feel safer knowing we've reduced our fire risk.",
     date: "March 25, 2025"
   },
   {
     name: "Sarah K.",
-    location: "Tacoma, WA",
+    location: "San Antonio, TX",
     rating: 5,
-    text: "I've used Shark Duct Cleaning twice now and both times have been excellent experiences. My family has noticed fewer allergy symptoms since having our ducts professionally cleaned. Worth every penny!",
+    text: "After Shark cleaned our air ducts, the difference in air quality was immediate. We didn't realize how much dust and allergens were circulating until they were gone! The cedar fever season was much more bearable this year.",
     date: "March 3, 2025"
   },
   {
     name: "David R.",
-    location: "Everett, WA",
-    rating: 4,
-    text: "Very thorough service. The free inspection revealed some issues with our system I had no idea about. They fixed everything and now our HVAC system runs much more efficiently. Will use again.",
+    location: "Round Rock, TX",
+    rating: 5,
+    text: "Had both our chimney and ducts cleaned by Shark. The chimney service was exceptional - they were thorough and made sure everything was operating safely. Now we can enjoy our fireplace without worry!",
     date: "February 18, 2025"
   },
   {
     name: "Lisa M.",
-    location: "Renton, WA",
+    location: "New Braunfels, TX",
     rating: 5,
-    text: "Outstanding service from start to finish. The scheduling was easy, technicians arrived on time, and they were extremely thorough. Our home feels fresher and cleaner. Thank you Shark Duct!",
+    text: "Outstanding service cleaning our dryer vent. The technician was on time, professional, and explained the importance of regular maintenance. I'm amazed at how much lint they removed - no wonder our clothes weren't drying properly!",
     date: "January 30, 2025"
   }
 ];
@@ -187,63 +187,7 @@ const ReviewsCarousel = () => {
               ))}
             </div>
           </div>
-          <p className="text-gray-600 mb-6">Based on 350+ verified customer reviews</p>
-          
-          <div className="flex flex-wrap justify-center gap-8">
-            <div className="text-center">
-              <img 
-                src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" 
-                alt="Google Reviews" 
-                className="h-12 mx-auto mb-2"
-              />
-              <div className="flex justify-center">
-                {[1, 2, 3, 4, 5].map((_, i) => (
-                  <svg 
-                    key={i}
-                    className="w-4 h-4 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                ))}
-              </div>
-              <p className="text-sm">4.9 (180+ reviews)</p>
-            </div>
-            
-            <div className="text-center">
-              <img 
-                src="https://1000logos.net/wp-content/uploads/2021/11/Yelp-Logo.png" 
-                alt="Yelp Reviews" 
-                className="h-12 mx-auto mb-2"
-              />
-              <div className="flex justify-center">
-                {[1, 2, 3, 4, 5].map((_, i) => (
-                  <svg 
-                    key={i}
-                    className="w-4 h-4 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                  </svg>
-                ))}
-              </div>
-              <p className="text-sm">4.8 (90+ reviews)</p>
-            </div>
-            
-            <div className="text-center">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/BBB.svg/1200px-BBB.svg.png" 
-                alt="BBB Rating" 
-                className="h-12 mx-auto mb-2"
-              />
-              <div className="flex justify-center">
-                <div className="bg-blue-700 text-white px-2 font-bold">A+</div>
-              </div>
-              <p className="text-sm">Accredited Business</p>
-            </div>
-          </div>
+          <p className="text-gray-600 mb-6">Based on 2,600+ verified customer reviews</p>
         </div>
       </div>
     </section>

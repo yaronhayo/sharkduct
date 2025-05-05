@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="text-white animate-slide-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Austin & San Antonio: <span className="text-shark-accent">Stop Breathing</span> Contaminated Air
+              Austin, San Antonio & Surrounding: <span className="text-shark-accent">Stop Breathing</span> Contaminated Air
             </h1>
             
             <p className="text-lg md:text-xl mb-8 text-gray-100">
@@ -22,18 +22,18 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-lg">
-                Free Home Air Assessment
+                Call To Inquire About A Free HVAC Duct & Vent Inspection
               </Button>
               <Button size="lg" variant="outline" className="bg-shark-blue hover:bg-shark-darkBlue hover:text-white text-white text-lg">
                 <Phone className="mr-2 h-4 w-4" />
-                <span>Local Experts: Call Now</span>
+                <span>877-652-4343</span>
               </Button>
             </div>
             
             <div className="mt-8 flex items-center">
               <div className="flex items-center">
                 <Shield className="w-6 h-6 text-shark-accent mr-2" />
-                <span className="font-semibold">Austin's #1 Rated Service</span>
+                <span className="font-semibold">Central Texas's #1 Rated Service</span>
               </div>
               <div className="h-5 border-l border-white/30 mx-4"></div>
               <span>Over 10,000 TX Homes Protected</span>
@@ -44,7 +44,7 @@ const Hero = () => {
             <div className="absolute -top-8 -left-8 w-full h-full bg-shark-accent rounded-lg transform rotate-3"></div>
             <div className="relative bg-white p-6 rounded-lg shadow-2xl">
               <div className="bg-gray-100 p-4 rounded-md mb-4">
-                <h3 className="text-2xl font-bold text-shark-darkBlue mb-2">Beat Austin's Allergy Season Now</h3>
+                <h3 className="text-2xl font-bold text-shark-darkBlue mb-2">Beat Central Texas Allergy Season Now</h3>
                 <p className="text-gray-600 mb-4">Local experts ready to help today!</p>
                 
                 <div className="space-y-4">
@@ -54,7 +54,7 @@ const Hero = () => {
                   </div>
                   <div className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Same-day service for Austin & San Antonio</span>
+                    <span>Same-day service for Central Texas</span>
                   </div>
                   <div className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -74,6 +74,11 @@ const Hero = () => {
                   placeholder="Phone Number" 
                   className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
                 />
+                <input 
+                  type="text" 
+                  placeholder="Address" 
+                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
+                />
                 <div className="flex flex-col sm:flex-row gap-4">
                   <select 
                     className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
@@ -81,7 +86,8 @@ const Hero = () => {
                     <option value="">Location</option>
                     <option value="austin">Austin</option>
                     <option value="sanantonio">San Antonio</option>
-                    <option value="surrounding">Surrounding Areas</option>
+                    <option value="sanmarcos">San Marcos</option>
+                    <option value="surrounding">Other Surrounding Areas</option>
                   </select>
                   <select 
                     className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
@@ -92,6 +98,11 @@ const Hero = () => {
                     <option value="planning">Planning Ahead</option>
                   </select>
                 </div>
+                <textarea
+                  placeholder="Notes (Optional)"
+                  rows={3}
+                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
+                ></textarea>
                 <Button className="w-full bg-shark-blue hover:bg-shark-darkBlue text-lg py-6">
                   Book Free Inspection Now
                 </Button>

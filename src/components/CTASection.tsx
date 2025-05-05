@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Phone } from 'lucide-react';
 
 const CTASection = () => {
   return (
@@ -12,7 +13,7 @@ const CTASection = () => {
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Is Your Family Breathing Austin's Worst Air?</h2>
           <p className="text-xl text-white/80 mb-8">
-            Austin and San Antonio homes hide a secret: Your air ducts may contain up to 40 pounds of dust, allergens, and pollutants. Don't wait for allergy season to strike again.
+            Austin, San Antonio & surrounding homes hide a secret: Your air ducts may contain up to 40 pounds of dust, allergens, and pollutants. Don't wait for allergy season to strike again.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -31,15 +32,15 @@ const CTASection = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
               <div className="text-5xl font-bold text-shark-accent mb-4">3</div>
               <h3 className="text-xl font-bold mb-2">Breathe Easy</h3>
-              <p className="text-white/80">Join thousands of satisfied Austin & San Antonio families</p>
+              <p className="text-white/80">Join thousands of satisfied Central Texas families</p>
             </div>
           </div>
           
           <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 flex flex-col md:flex-row md:items-center justify-between">
             <div className="mb-6 md:mb-0 md:mr-6 text-left">
-              <h3 className="text-2xl font-bold mb-2">Texas-Sized Savings Today</h3>
+              <h3 className="text-2xl font-bold mb-2">Texas Values</h3>
               <p className="text-white/80 mb-4">
-                Austin and San Antonio residents: Call now for an exclusive <span className="text-shark-accent font-bold">20% neighbors discount</span> – because clean air shouldn't wait.
+                As part of giving back to our community, we give an extra <span className="text-shark-accent font-bold">10% OFF</span> to active duty military, Veterans & seniors.
               </p>
               <div className="flex items-center">
                 <svg className="w-5 h-5 text-shark-accent mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -51,19 +52,13 @@ const CTASection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-lg">
-                Get Your Free Inspection
+                Call For Free Inspection
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg">
-                Call (512) 555-7890
+                <Phone className="mr-2 h-4 w-4" />
+                <span>Call (877) 652-4343</span>
               </Button>
             </div>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <p className="text-sm text-white/60">
-              *Offer valid for residential and commercial properties in Austin, San Antonio and surrounding areas. 
-              20% discount applies to services booked within 7 days of consultation. Act fast - spots fill quickly!
-            </p>
           </div>
         </div>
       </div>
