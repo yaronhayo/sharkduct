@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Shield } from 'lucide-react';
+import { Shield, Check } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="text-white animate-slide-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Breathe Cleaner Air with <span className="text-shark-yellow">Professional</span> Duct Cleaning
+              Breathe Cleaner Air with <span className="text-shark-accent">Professional</span> Duct Cleaning
             </h1>
             
             <p className="text-lg md:text-xl mb-8 text-gray-100">
@@ -21,8 +21,8 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button size="lg" className="bg-shark-yellow hover:bg-yellow-500 text-shark-darkBlue text-lg">
-                Get FREE Inspection
+              <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-lg">
+                Get Free Consultation
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg">
                 View Services
@@ -31,7 +31,7 @@ const Hero = () => {
             
             <div className="mt-8 flex items-center">
               <div className="flex items-center">
-                <Shield className="w-6 h-6 text-shark-yellow mr-2" />
+                <Shield className="w-6 h-6 text-shark-accent mr-2" />
                 <span className="font-semibold">100% Satisfaction Guarantee</span>
               </div>
               <div className="h-5 border-l border-white/30 mx-4"></div>
@@ -40,30 +40,24 @@ const Hero = () => {
           </div>
           
           <div className="hidden md:block relative animate-fade-in">
-            <div className="absolute -top-8 -left-8 w-full h-full bg-shark-yellow rounded-lg transform rotate-3"></div>
+            <div className="absolute -top-8 -left-8 w-full h-full bg-shark-accent rounded-lg transform rotate-3"></div>
             <div className="relative bg-white p-6 rounded-lg shadow-2xl">
               <div className="bg-gray-100 p-4 rounded-md mb-4">
-                <h3 className="text-2xl font-bold text-shark-darkBlue mb-2">FREE Duct Cleaning Inspection</h3>
-                <p className="text-gray-600 mb-4">Limited time offer. Schedule now!</p>
+                <h3 className="text-2xl font-bold text-shark-darkBlue mb-2">Get Free Duct Cleaning Advice</h3>
+                <p className="text-gray-600 mb-4">Speak with our friendly experts today!</p>
                 
                 <div className="space-y-4">
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                    </svg>
-                    <span>No obligation inspection</span>
+                  <div className="flex items-start">
+                    <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Free expert advice on your specific needs</span>
                   </div>
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                    </svg>
-                    <span>Expert recommendations</span>
+                  <div className="flex items-start">
+                    <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Quick response from our specialists</span>
                   </div>
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                    </svg>
-                    <span>Same-day service available</span>
+                  <div className="flex items-start">
+                    <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Same-day service may be available</span>
                   </div>
                 </div>
               </div>
@@ -71,7 +65,7 @@ const Hero = () => {
               <form className="space-y-4">
                 <input 
                   type="text" 
-                  placeholder="Full Name" 
+                  placeholder="Your Name" 
                   className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
                 />
                 <input 
@@ -79,16 +73,29 @@ const Hero = () => {
                   placeholder="Phone Number" 
                   className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
                 />
-                <input 
-                  type="email" 
-                  placeholder="Email Address" 
-                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
-                />
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <select 
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
+                  >
+                    <option value="">Best time to call</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                  </select>
+                  <select 
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
+                  >
+                    <option value="">Service interest</option>
+                    <option value="duct">Duct Cleaning</option>
+                    <option value="dryer">Dryer Vent</option>
+                    <option value="both">Both Services</option>
+                  </select>
+                </div>
                 <Button className="w-full bg-shark-blue hover:bg-shark-darkBlue text-lg py-6">
-                  Schedule Free Inspection
+                  Get Free Advice
                 </Button>
                 <p className="text-xs text-gray-500 text-center">
-                  By submitting, you agree to our terms and conditions. *Terms apply.
+                  We respect your privacy. No pressure, just helpful advice.
                 </p>
               </form>
             </div>

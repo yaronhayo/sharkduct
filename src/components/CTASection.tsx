@@ -12,26 +12,26 @@ const CTASection = () => {
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for Cleaner, Healthier Air?</h2>
           <p className="text-xl text-white/80 mb-8">
-            Don't wait until your air quality affects your health. Take advantage of our FREE inspection and start breathing cleaner air today.
+            Don't wait until your air quality affects your health. Talk to our experts today and start breathing cleaner air.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-              <div className="text-5xl font-bold text-shark-yellow mb-4">1</div>
-              <h3 className="text-xl font-bold mb-2">Schedule</h3>
-              <p className="text-white/80">Book your free inspection online or by phone</p>
+              <div className="text-5xl font-bold text-shark-accent mb-4">1</div>
+              <h3 className="text-xl font-bold mb-2">Connect</h3>
+              <p className="text-white/80">Speak with our friendly team today</p>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-              <div className="text-5xl font-bold text-shark-yellow mb-4">2</div>
-              <h3 className="text-xl font-bold mb-2">Inspect</h3>
-              <p className="text-white/80">We'll evaluate your system and provide recommendations</p>
+              <div className="text-5xl font-bold text-shark-accent mb-4">2</div>
+              <h3 className="text-xl font-bold mb-2">Discuss</h3>
+              <p className="text-white/80">We'll learn about your specific needs</p>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-              <div className="text-5xl font-bold text-shark-yellow mb-4">3</div>
-              <h3 className="text-xl font-bold mb-2">Clean</h3>
-              <p className="text-white/80">Experience professional cleaning and breathe easier</p>
+              <div className="text-5xl font-bold text-shark-accent mb-4">3</div>
+              <h3 className="text-xl font-bold mb-2">Solve</h3>
+              <p className="text-white/80">Get professional solutions for cleaner air</p>
             </div>
           </div>
           
@@ -39,10 +39,10 @@ const CTASection = () => {
             <div className="mb-6 md:mb-0 md:mr-6 text-left">
               <h3 className="text-2xl font-bold mb-2">Limited Time Offer</h3>
               <p className="text-white/80 mb-4">
-                Schedule your free inspection today and receive a <span className="text-shark-yellow font-bold">10% discount</span> on any service.
+                Call today and receive a <span className="text-shark-accent font-bold">10% discount</span> on any service.
               </p>
               <div className="flex items-center">
-                <svg className="w-5 h-5 text-shark-yellow mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-5 h-5 text-shark-accent mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"></path>
                 </svg>
                 <span className="text-sm">Offer expires in 30 days</span>
@@ -50,8 +50,8 @@ const CTASection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-shark-yellow hover:bg-yellow-500 text-shark-darkBlue text-lg">
-                Schedule Free Inspection
+              <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-lg">
+                Get Free Advice
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg">
                 Call (123) 456-7890
@@ -61,8 +61,8 @@ const CTASection = () => {
           
           <div className="mt-12 text-center">
             <p className="text-sm text-white/60">
-              *Free inspection offer valid for residential properties within our service area. 
-              Some restrictions may apply. 10% discount applies to services booked within 14 days of inspection.
+              *Offer valid for residential properties within our service area. 
+              Some restrictions may apply. 10% discount applies to services booked within 14 days of consultation.
             </p>
           </div>
         </div>

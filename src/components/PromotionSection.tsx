@@ -77,18 +77,18 @@ const PromotionSection = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0">
               <h3 className="text-2xl font-bold text-shark-darkBlue mb-2">
-                FREE Duct Cleaning Inspection
+                Free Duct Cleaning Consultation
               </h3>
               <p className="text-gray-600 mb-4">
-                Take advantage of our no-obligation assessment. Our experts will identify potential issues and recommend the best solutions.
+                Speak with our friendly experts today. We'll help you understand your options with no pressure.
               </p>
               <p className="text-sm text-gray-500">
-                *Terms and conditions apply. Limited time offer.
+                *Limited time offer.
               </p>
             </div>
             <div className="flex-shrink-0">
-              <Button size="lg" className="bg-shark-yellow hover:bg-yellow-500 text-shark-darkBlue font-bold px-8">
-                Schedule Now
+              <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white font-bold px-8">
+                Get Free Advice
               </Button>
             </div>
           </div>
