@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, CalendarDays, Menu, X } from 'lucide-react';
+import { Phone, CalendarDays } from 'lucide-react';
 import BookingDialog from './BookingDialog';
 import { motion } from 'framer-motion';
 import {
@@ -14,11 +14,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
@@ -133,17 +128,7 @@ const Navbar = () => {
             </motion.div>
           </a>
 
-          {/* Mobile Navigation Trigger - changed to only show mobile menu button, without the menu content */}
-          <div className="md:hidden ml-2">
-            <Button 
-              variant="outline" 
-              size="icon" 
-              className={`border-none shadow-none ${!isScrolled && 'text-white'}`}
-              onClick={() => console.log("Menu button clicked - Navigation removed from mobile view")}
-            >
-              <Menu className="h-6 w-6" />
-            </Button>
-          </div>
+          {/* Mobile Navigation Button - completely removed */}
         </div>
       </div>
     </motion.nav>
