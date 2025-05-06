@@ -3,12 +3,20 @@
 <IfModule mod_mime.c>
   AddType application/javascript .js
   AddType application/json .json
+  AddType text/javascript .mjs
+  AddType application/javascript .mjs
 </IfModule>
 
 # Enable CORS for font files and other assets
 <IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|json|woff|woff2|ttf|eot|svg)$">
+  <FilesMatch "\.(js|mjs|css|json|woff|woff2|ttf|eot|svg)$">
     Header set Access-Control-Allow-Origin "*"
+    Header set X-Content-Type-Options "nosniff"
+  </FilesMatch>
+  
+  # Set correct content type for JS modules
+  <FilesMatch "\.mjs$">
+    Header set Content-Type "application/javascript"
   </FilesMatch>
 </IfModule>
 
