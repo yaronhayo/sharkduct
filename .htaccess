@@ -1,0 +1,23 @@
+
+# Set correct MIME type for JavaScript modules
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType application/json .json
+</IfModule>
+
+# Enable CORS for font files and other assets
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|json|woff|woff2|ttf|eot|svg)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+# Redirect all requests to index.html for SPA routing
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
