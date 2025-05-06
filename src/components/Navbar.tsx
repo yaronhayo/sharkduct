@@ -88,7 +88,7 @@ const Navbar = () => {
                   <NavigationMenuLink
                     className={cn(
                       navigationMenuTriggerStyle(),
-                      "bg-transparent hover:bg-transparent",
+                      "bg-transparent hover:bg-transparent cursor-pointer",
                       isScrolled 
                         ? "hover:text-shark-blue text-shark-darkBlue" 
                         : "text-white hover:text-gray-200"
