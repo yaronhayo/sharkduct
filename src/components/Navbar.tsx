@@ -51,8 +51,8 @@ const Navbar = () => {
     if (section) {
       // Get the y-coordinate of the section
       const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-      // Subtract 100px (approximately an inch) from the scroll position
-      const scrollPosition = sectionTop - 100;
+      // Adjust to 80px offset instead of 100px
+      const scrollPosition = sectionTop - 80;
       
       window.scrollTo({
         top: scrollPosition,
