@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone } from 'lucide-react';
@@ -251,9 +250,9 @@ const ServiceBenefits = () => {
           </p>
           <a href="tel:8778888431">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button size="lg" className="bg-shark-yellow hover:bg-yellow-500 text-shark-darkBlue text-lg">
+              <Button size="lg" className="bg-shark-blue hover:bg-shark-darkBlue text-white text-lg shadow-lg transition-colors">
                 <Phone className="mr-2 h-5 w-5" />
-                Call To Inquire About A Free Inspection
+                Call For Free Inspection
               </Button>
             </motion.div>
           </a>
