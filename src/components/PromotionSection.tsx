@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -175,8 +174,8 @@ const PromotionSection = () => {
                   {/* Dotted Border */}
                   <div className="border-t border-dashed border-white/30 my-4"></div>
                   
-                  {/* CTA Button */}
-                  <BookingDialog>
+                  {/* CTA Button - Updated to link to phone */}
+                  <a href="tel:8778888431">
                     <motion.div 
                       whileHover={{ scale: 1.05 }} 
                       whileTap={{ scale: 0.95 }}
@@ -188,7 +187,7 @@ const PromotionSection = () => {
                         Claim Offer
                       </Button>
                     </motion.div>
-                  </BookingDialog>
+                  </a>
                 </div>
                 
                 {/* Bottom edge design */}
@@ -219,7 +218,8 @@ const PromotionSection = () => {
               </p>
             </div>
             <div className="flex-shrink-0">
-              <BookingDialog>
+              {/* Updated to link to phone number */}
+              <a href="tel:8778888431">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button 
                     size="lg" 
@@ -229,7 +229,7 @@ const PromotionSection = () => {
                     Get Free Advice
                   </Button>
                 </motion.div>
-              </BookingDialog>
+              </a>
             </div>
           </div>
         </motion.div>
