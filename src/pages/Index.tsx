@@ -17,9 +17,15 @@ const Index = () => {
       <Navbar />
       <Hero />
       <AirQualitySection />
-      <ServiceBenefits />
-      <PromotionSection />
-      <WhyChooseUs />
+      <div id="benefits">
+        <ServiceBenefits />
+      </div>
+      <div id="promotions">
+        <PromotionSection />
+      </div>
+      <div id="why-us">
+        <WhyChooseUs />
+      </div>
       <ReviewsCarousel />
       <FAQSection />
       <CTASection />

@@ -1,12 +1,28 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, CalendarDays } from 'lucide-react';
+import { Phone, CalendarDays, Menu, X } from 'lucide-react';
 import BookingDialog from './BookingDialog';
 import { motion } from 'framer-motion';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+import { cn } from "@/lib/utils";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +36,23 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const menuItems = [
+    { name: "Indoor Air Quality", href: "#air-quality" },
+    { name: "Benefits", href: "#benefits" },
+    { name: "Why Us?", href: "#why-us" },
+    { name: "Promotions", href: "#promotions" },
+    { name: "Reviews", href: "#reviews" },
+    { name: "FAQs", href: "#faq" },
+  ];
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.querySelector(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+    }
+  };
 
   return (
     <motion.nav 
@@ -46,6 +79,27 @@ const Navbar = () => {
           </a>
         </motion.div>
 
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center">
+          <NavigationMenu className="mr-4">
+            <NavigationMenuList>
+              {menuItems.map((item) => (
+                <NavigationMenuItem key={item.name}>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "bg-transparent hover:bg-transparent hover:text-shark-blue text-shark-darkBlue"
+                    )}
+                    onClick={() => scrollToSection(item.href)}
+                  >
+                    {item.name}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
         {/* CTAs */}
         <div className="flex items-center space-x-2">
           <BookingDialog>
@@ -65,6 +119,32 @@ const Navbar = () => {
               </Button>
             </motion.div>
           </a>
+
+          {/* Mobile Navigation Trigger */}
+          <div className="md:hidden ml-2">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" className="border-none shadow-none">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[250px] sm:w-[300px]">
+                <div className="py-6">
+                  <nav className="flex flex-col gap-4">
+                    {menuItems.map((item) => (
+                      <a
+                        key={item.name}
+                        onClick={() => scrollToSection(item.href)} 
+                        className="text-lg font-medium text-shark-darkBlue hover:text-shark-blue transition-colors cursor-pointer px-2 py-1"
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </motion.nav>
