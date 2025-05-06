@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <motion.nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+        isScrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'
       }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -115,7 +115,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-2">
           <BookingDialog>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className={`${isScrolled ? 'bg-shark-accent text-white' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
+              <Button className={`${isScrolled ? 'bg-shark-accent text-white' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-all duration-300`}>
                 <CalendarDays className="mr-2 h-4 w-4" />
                 <span className="hidden sm:inline">Book Free Inspection</span>
                 <span className="sm:hidden">Book</span>
@@ -124,7 +124,7 @@ const Navbar = () => {
           </BookingDialog>
           <a href="tel:8778888431">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className={`${isScrolled ? 'bg-shark-blue' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
+              <Button className={`${isScrolled ? 'bg-shark-blue' : 'bg-white/20 backdrop-blur-sm'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-all duration-300 ${!isScrolled && 'text-white border border-white/30'}`}>
                 <Phone className="mr-2 h-4 w-4" />
                 <span className="inline">877-888-8431</span>
               </Button>
