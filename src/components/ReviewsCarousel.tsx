@@ -1,7 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
 
 const reviews = [
   {
@@ -42,8 +48,8 @@ const reviews = [
 ];
 
 const ReviewsCarousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [visibleReviews, setVisibleReviews] = useState([]);
+  const [api, setApi] = useState<any>();
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -61,34 +67,33 @@ const ReviewsCarousel = () => {
   }, []);
 
   useEffect(() => {
-    if (isMobile) {
-      setVisibleReviews([reviews[activeIndex]]);
-    } else {
-      const startIndex = activeIndex;
-      const endIndex = (activeIndex + 2) % reviews.length;
-      
-      if (startIndex <= endIndex) {
-        setVisibleReviews(reviews.slice(startIndex, endIndex + 1));
-      } else {
-        setVisibleReviews([...reviews.slice(startIndex), ...reviews.slice(0, endIndex + 1)]);
-      }
-    }
-  }, [activeIndex, isMobile]);
+    if (!api) return;
+    
+    const onSelect = () => {
+      setCurrentIndex(api.selectedScrollSnap());
+    };
+    
+    api.on("select", onSelect);
+    
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   // Auto-rotate carousel
   useEffect(() => {
-    let interval;
+    let interval: number | undefined;
     
-    if (isAutoPlaying) {
-      interval = setInterval(() => {
-        setActiveIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    if (isAutoPlaying && api) {
+      interval = window.setInterval(() => {
+        api.scrollNext();
       }, 2000); // 2 seconds pause between rotations
     }
     
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, api]);
 
   // Pause auto-rotation when user interacts with carousel
   const handleUserInteraction = () => {
@@ -97,22 +102,7 @@ const ReviewsCarousel = () => {
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
-  const nextSlide = () => {
-    handleUserInteraction();
-    setActiveIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-  };
-
-  const prevSlide = () => {
-    handleUserInteraction();
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
-  };
-
-  const goToSlide = (index) => {
-    handleUserInteraction();
-    setActiveIndex(index);
-  };
-
-  const renderStars = (rating) => {
+  const renderStars = (rating: number) => {
     return Array(5).fill(0).map((_, i) => (
       <svg 
         key={i}
@@ -135,68 +125,70 @@ const ReviewsCarousel = () => {
         </p>
 
         <div className="relative mt-12">
-          <div className="flex overflow-hidden">
-            <div className="flex transition-transform duration-500 ease-in-out gap-6">
-              {visibleReviews.map((review, index) => (
-                <Card 
-                  key={index} 
-                  className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] border border-gray-200 shadow-lg transition-all duration-300"
-                >
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-center mb-4">
-                      <div className="flex">
-                        {renderStars(review.rating)}
+          <Carousel 
+            setApi={setApi}
+            className="w-full"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            onMouseEnter={() => handleUserInteraction()}
+            onMouseLeave={() => setIsAutoPlaying(true)}
+            onTouchStart={() => handleUserInteraction()}
+            onTouchEnd={() => setTimeout(() => setIsAutoPlaying(true), 5000)}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {reviews.map((review, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/3">
+                  <Card className="border border-gray-200 shadow-lg h-full transition-all duration-300">
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-center mb-4">
+                        <div className="flex">
+                          {renderStars(review.rating)}
+                        </div>
+                        <span className="text-sm text-gray-500">{review.date}</span>
                       </div>
-                      <span className="text-sm text-gray-500">{review.date}</span>
-                    </div>
-                    <p className="text-gray-700 mb-6">"{review.text}"</p>
-                    <div className="flex items-center">
-                      <div className="bg-shark-blue text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
-                        {review.name.charAt(0)}
+                      <p className="text-gray-700 mb-6">"{review.text}"</p>
+                      <div className="flex items-center mt-auto">
+                        <div className="bg-shark-blue text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                          {review.name.charAt(0)}
+                        </div>
+                        <div>
+                          <div className="font-semibold">{review.name}</div>
+                          <div className="text-sm text-gray-500">{review.location}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="font-semibold">{review.name}</div>
-                        <div className="text-sm text-gray-500">{review.location}</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
               ))}
+            </CarouselContent>
+            <div className="hidden md:flex justify-center mt-6">
+              <CarouselPrevious 
+                onClick={() => handleUserInteraction()}
+                className="relative inset-auto translate-y-0 mr-2 bg-shark-blue text-white hover:bg-shark-darkBlue hover:text-white" 
+              />
+              <CarouselNext 
+                onClick={() => handleUserInteraction()}
+                className="relative inset-auto translate-y-0 ml-2 bg-shark-blue text-white hover:bg-shark-darkBlue hover:text-white" 
+              />
             </div>
-          </div>
-
-          <div className="flex justify-center mt-8 space-x-2">
+          </Carousel>
+          
+          <div className="flex justify-center mt-6 md:mt-0 space-x-2">
             {reviews.map((_, index) => (
               <button
                 key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full ${
-                  index === activeIndex ? 'bg-shark-blue' : 'bg-gray-300'
+                onClick={() => {
+                  api?.scrollTo(index);
+                  handleUserInteraction();
+                }}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentIndex ? 'bg-shark-blue' : 'bg-gray-300'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               ></button>
             ))}
-          </div>
-
-          <div className="flex justify-center mt-4 space-x-4">
-            <Button 
-              variant="outline" 
-              onClick={prevSlide}
-              className="rounded-full w-10 h-10 p-0 flex items-center justify-center border-shark-blue text-shark-blue"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </Button>
-            <Button 
-              variant="outline" 
-              onClick={nextSlide}
-              className="rounded-full w-10 h-10 p-0 flex items-center justify-center border-shark-blue text-shark-blue"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"></path>
-              </svg>
-            </Button>
           </div>
         </div>
         
