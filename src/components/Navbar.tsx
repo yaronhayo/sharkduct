@@ -98,10 +98,10 @@ const Navbar = () => {
                   <NavigationMenuLink
                     className={cn(
                       navigationMenuTriggerStyle(),
-                      "bg-transparent hover:bg-transparent cursor-pointer",
+                      "bg-transparent hover:bg-transparent cursor-pointer relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-current after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left",
                       isScrolled 
                         ? "hover:text-shark-blue text-shark-darkBlue" 
-                        : "text-white hover:text-gray-200"
+                        : "text-white hover:text-white hover:bg-blue-400/20",
                     )}
                     onClick={() => scrollToSection(item.href)}
                   >
