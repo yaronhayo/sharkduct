@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, CalendarDays } from 'lucide-react';
 import BookingDialog from './BookingDialog';
+import { motion } from 'framer-motion';
 
 const CTASection = () => {
   return (
@@ -10,33 +12,73 @@ const CTASection = () => {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAtMzR2NmgxOHYtNmgtMTh6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2Nmg2di02aC02em0wIDI0djZoNnYtNmgtNnptMTIgLTI0djZoNnYtNmgtNnptMCAxMnY2aDZ2LTZoLTZ6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2NmgxOHYtNmgtMTh6bS00OCAtNDh2NmgxOHYtNmgtMTh6bTAgMTJ2Nmg2di02aC02em0wIDEydjZoNnYtNmgtNnptMTIgLTM2djZoNnYtNmgtNnptMTIgLTEydjZoNnYtNmgtNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-10"></div>
 
       <div className="container mx-auto relative z-10">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Is Your Family Breathing Austin's Worst Air?</h2>
-          <p className="text-xl text-white/80 mb-8">
-            Austin, San Antonio & surrounding homes hide a secret: Your air ducts may contain up to 40 pounds of dust, allergens, and pollutants. Don't wait for allergy season to strike again.
-          </p>
+        <motion.div 
+          className="max-w-4xl mx-auto text-center text-white"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Is Your Family Breathing Austin's Worst Air?
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-white/80 mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Austin & surrounding homes hide a secret: Your air ducts may contain up to 40 pounds of dust, allergens, and pollutants. Don't wait for allergy season to strike again.
+          </motion.p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+            <motion.div 
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            >
               <div className="text-5xl font-bold text-shark-accent mb-4">1</div>
               <h3 className="text-xl font-bold mb-2">Connect</h3>
               <p className="text-white/80">5-minute call with our Texas-based specialists</p>
-            </div>
+            </motion.div>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+            <motion.div 
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            >
               <div className="text-5xl font-bold text-shark-accent mb-4">2</div>
               <h3 className="text-xl font-bold mb-2">Discover</h3>
               <p className="text-white/80">We identify hidden problems affecting your family's health</p>
-            </div>
+            </motion.div>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+            <motion.div 
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.6 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            >
               <div className="text-5xl font-bold text-shark-accent mb-4">3</div>
               <h3 className="text-xl font-bold mb-2">Breathe Easy</h3>
               <p className="text-white/80">Join thousands of satisfied Central Texas families</p>
-            </div>
+            </motion.div>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 flex flex-col md:flex-row md:items-center justify-between">
+          <motion.div 
+            className="bg-white/5 backdrop-blur-sm rounded-lg p-8 flex flex-col md:flex-row md:items-center justify-between"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
             <div className="mb-6 md:mb-0 md:mr-6 text-left">
               <h3 className="text-2xl font-bold mb-2">Texas Values</h3>
               <p className="text-white/80 mb-4">
@@ -52,24 +94,28 @@ const CTASection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <BookingDialog>
-                <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-lg">
-                  <CalendarDays className="mr-2 h-5 w-5" />
-                  Book Free Inspection
-                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-lg">
+                    <CalendarDays className="mr-2 h-5 w-5" />
+                    Book Free Inspection
+                  </Button>
+                </motion.div>
               </BookingDialog>
-              <a href="tel:8776524343">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white text-white bg-white/10 hover:bg-white/20 text-lg"
-                >
-                  <Phone className="mr-2 h-5 w-5" />
-                  <span>Call (877) 652-4343</span>
-                </Button>
+              <a href="tel:8778888431">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-white text-white bg-white/10 hover:bg-white/20 text-lg"
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    <span>Call (877) 888-8431</span>
+                  </Button>
+                </motion.div>
               </a>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

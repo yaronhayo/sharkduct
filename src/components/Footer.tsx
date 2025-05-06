@@ -3,6 +3,7 @@ import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,8 +12,17 @@ const Footer = () => {
     <footer className="bg-shark-darkBlue text-white">
       <div className="container mx-auto px-4 py-8">
         {/* Logo and Contact Information */}
-        <div className="mb-6 flex flex-col items-center">
-          <div className="mb-4">
+        <motion.div 
+          className="mb-6 flex flex-col items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div 
+            className="mb-4"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <Link to="/">
               <img 
                 src="https://sharkduct.com/wp-content/uploads/2023/10/shark-duct.png" 
@@ -20,32 +30,51 @@ const Footer = () => {
                 className="h-16 md:h-20" 
               />
             </Link>
-          </div>
-          <div className="flex justify-center items-center mb-3">
+          </motion.div>
+          <motion.div 
+            className="flex justify-center items-center mb-3"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <Phone className="h-5 w-5 text-shark-accent mr-2" />
-            <a href="tel:877-652-4343" className="text-white hover:text-shark-accent transition-colors">
-              (877) 652-4343
+            <a href="tel:877-888-8431" className="text-white hover:text-shark-accent transition-colors">
+              (877) 888-8431
             </a>
-          </div>
+          </motion.div>
           <p className="text-gray-300">
-            Serving Austin, San Antonio & surrounding areas
+            Serving Austin & surrounding areas
           </p>
-        </div>
+        </motion.div>
         
         <Separator className="bg-gray-700 my-6" />
         
         {/* Legal Information and Disclaimers */}
         <div className="text-center">
-          <div className="flex flex-wrap justify-center gap-4 mb-4">
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4 mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors text-sm">Privacy Policy</Link>
             <Link to="/terms-of-service" className="text-gray-300 hover:text-white transition-colors text-sm">Terms of Service</Link>
-          </div>
+          </motion.div>
           
-          <p className="text-gray-400 text-sm mb-4">
+          <motion.p 
+            className="text-gray-400 text-sm mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             &copy; {currentYear} Shark Duct Cleaning. All rights reserved.
-          </p>
+          </motion.p>
           
-          <div className="text-xs text-gray-500 max-w-2xl mx-auto">
+          <motion.div 
+            className="text-xs text-gray-500 max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <p className="mb-2">
               Licensed, Bonded & Insured | NADCA Certified
             </p>
@@ -54,7 +83,7 @@ const Footer = () => {
               Offer valid for residential customers only. Cannot be combined with other offers.
               Please contact us for a detailed quote.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </footer>
