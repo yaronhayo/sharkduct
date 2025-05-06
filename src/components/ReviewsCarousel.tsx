@@ -45,6 +45,7 @@ const ReviewsCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleReviews, setVisibleReviews] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -74,12 +75,41 @@ const ReviewsCarousel = () => {
     }
   }, [activeIndex, isMobile]);
 
+  // Auto-rotate carousel
+  useEffect(() => {
+    let interval;
+    
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+      }, 2000); // 2 seconds pause between rotations
+    }
+    
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isAutoPlaying]);
+
+  // Pause auto-rotation when user interacts with carousel
+  const handleUserInteraction = () => {
+    setIsAutoPlaying(false);
+    // Resume auto-rotation after 5 seconds of inactivity
+    setTimeout(() => setIsAutoPlaying(true), 5000);
+  };
+
   const nextSlide = () => {
+    handleUserInteraction();
     setActiveIndex((prevIndex) => (prevIndex + 1) % reviews.length);
   };
 
   const prevSlide = () => {
+    handleUserInteraction();
     setActiveIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
+  };
+
+  const goToSlide = (index) => {
+    handleUserInteraction();
+    setActiveIndex(index);
   };
 
   const renderStars = (rating) => {
@@ -110,7 +140,7 @@ const ReviewsCarousel = () => {
               {visibleReviews.map((review, index) => (
                 <Card 
                   key={index} 
-                  className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] border border-gray-200 shadow-lg"
+                  className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] border border-gray-200 shadow-lg transition-all duration-300"
                 >
                   <CardContent className="p-6">
                     <div className="flex justify-between items-center mb-4">
@@ -139,7 +169,7 @@ const ReviewsCarousel = () => {
             {reviews.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full ${
                   index === activeIndex ? 'bg-shark-blue' : 'bg-gray-300'
                 }`}

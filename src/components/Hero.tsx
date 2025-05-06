@@ -60,15 +60,15 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <BookingDialog>
-                <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-base">
+                <Button size="lg" className="bg-shark-accent hover:bg-shark-blue text-white text-base w-full sm:w-auto">
                   <CalendarDays className="mr-2 h-5 w-5" />
                   Book Free Inspection
                 </Button>
               </BookingDialog>
-              <a href="tel:8778888431">
-                <Button size="lg" variant="outline" className="bg-shark-blue hover:bg-shark-darkBlue hover:text-white text-white text-base">
+              <a href="tel:8778888431" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="bg-shark-blue hover:bg-shark-darkBlue hover:text-white text-white text-base w-full">
                   <Phone className="mr-2 h-5 w-5" />
-                  <span>877-888-8431</span>
+                  <span>Call 877-888-8431</span>
                 </Button>
               </a>
             </motion.div>

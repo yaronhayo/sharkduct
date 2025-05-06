@@ -50,9 +50,10 @@ const Navbar = () => {
         <div className="flex items-center space-x-2">
           <BookingDialog>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className={`hidden md:flex ${isScrolled ? 'bg-shark-accent text-white' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
+              <Button className={`${isScrolled ? 'bg-shark-accent text-white' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
                 <CalendarDays className="mr-2 h-4 w-4" />
-                Book Free Inspection
+                <span className="hidden sm:inline">Book Free Inspection</span>
+                <span className="sm:hidden">Book</span>
               </Button>
             </motion.div>
           </BookingDialog>
@@ -60,7 +61,7 @@ const Navbar = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className={`${isScrolled ? 'bg-shark-blue' : 'bg-white text-shark-blue'} hover:bg-shark-darkBlue hover:text-white shadow-lg transition-colors`}>
                 <Phone className="mr-2 h-4 w-4" />
-                <span className="hidden sm:inline">877-888-8431</span>
+                <span className="inline">877-888-8431</span>
               </Button>
             </motion.div>
           </a>
