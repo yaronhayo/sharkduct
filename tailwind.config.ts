@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Montserrat', 'sans-serif'],
+				display: ['Playfair Display', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -69,7 +73,7 @@ export default {
 					darkBlue: '#0F3B60',
 					lightBlue: '#68B9ED',
 					gray: '#F5F5F5',
-					accent: '#3a9abc'  // Changed from yellow: '#FFBC00' to accent: '#3a9abc'
+					accent: '#3a9abc'
 				}
 			},
 			borderRadius: {

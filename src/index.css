@@ -90,7 +90,11 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold;
   }
 }
 
@@ -99,11 +103,11 @@
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl font-bold text-shark-darkBlue mb-6 text-center;
+  @apply text-3xl md:text-4xl font-display font-bold text-shark-darkBlue mb-6 text-center;
 }
 
 .section-subtitle {
-  @apply text-lg text-gray-600 mb-8 max-w-3xl mx-auto text-center;
+  @apply text-lg font-sans text-gray-600 mb-8 max-w-3xl mx-auto text-center;
 }
 
 .gradient-btn {
