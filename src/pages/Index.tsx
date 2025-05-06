@@ -16,18 +16,24 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <AirQualitySection />
+      <div id="air-quality">
+        <AirQualitySection />
+      </div>
       <div id="benefits">
         <ServiceBenefits />
-      </div>
-      <div id="promotions">
-        <PromotionSection />
       </div>
       <div id="why-us">
         <WhyChooseUs />
       </div>
-      <ReviewsCarousel />
-      <FAQSection />
+      <div id="promotions">
+        <PromotionSection />
+      </div>
+      <div id="reviews">
+        <ReviewsCarousel />
+      </div>
+      <div id="faq">
+        <FAQSection />
+      </div>
       <CTASection />
       <Footer />
     </div>

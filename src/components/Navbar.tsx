@@ -49,7 +49,15 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const section = document.querySelector(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      // Get the y-coordinate of the section
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      // Subtract 100px (approximately an inch) from the scroll position
+      const scrollPosition = sectionTop - 100;
+      
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
       setIsOpen(false);
     }
   };
