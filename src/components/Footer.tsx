@@ -82,10 +82,16 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.div variants={itemVariants}>
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, color: "#fff" }}
+            >
               <Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors text-sm">Privacy Policy</Link>
             </motion.div>
-            <motion.div variants={itemVariants}>
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, color: "#fff" }}
+            >
               <Link to="/terms-of-service" className="text-gray-300 hover:text-white transition-colors text-sm">Terms of Service</Link>
             </motion.div>
           </motion.div>

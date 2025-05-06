@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ServiceBenefits = () => {
   const ductCleaningBenefits = [
@@ -65,22 +66,63 @@ const ServiceBenefits = () => {
     }
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
     <section id="benefits" className="section-padding bg-shark-gray">
       <div className="container mx-auto">
-        <h2 className="section-title">Benefits of Our Professional Cleaning Services</h2>
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Benefits of Our Professional Cleaning Services
+        </motion.h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
           {/* Air Duct Cleaning Benefits */}
-          <div>
-            <div className="bg-white rounded-lg p-6 shadow-lg mb-6">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="bg-white rounded-lg p-6 shadow-lg mb-6"
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            >
               <h3 className="text-3xl font-bold text-shark-blue mb-6 pb-4 border-b border-gray-200">
                 Air Duct Cleaning Benefits
               </h3>
               
               <div className="space-y-8">
                 {ductCleaningBenefits.map((benefit, index) => (
-                  <div key={index} className="flex">
+                  <motion.div 
+                    key={index} 
+                    className="flex"
+                    variants={itemVariants}
+                  >
                     <div className="flex-shrink-0 mr-4">
                       {benefit.icon}
                     </div>
@@ -88,20 +130,28 @@ const ServiceBenefits = () => {
                       <h4 className="text-xl font-semibold text-shark-darkBlue mb-2">{benefit.title}</h4>
                       <p className="text-gray-600">{benefit.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
               
               <div className="mt-8 flex justify-center">
-                <a href="tel:8776524343">
-                  <Button className="bg-shark-blue hover:bg-shark-darkBlue text-lg">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Schedule Duct Cleaning
-                  </Button>
+                <a href="tel:8778888431">
+                  <motion.div 
+                    whileHover={{ scale: 1.05 }} 
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button className="bg-shark-blue hover:bg-shark-darkBlue text-lg">
+                      <Phone className="mr-2 h-5 w-5" />
+                      Schedule Duct Cleaning
+                    </Button>
+                  </motion.div>
                 </a>
               </div>
               
-              <div className="mt-6 bg-blue-50 rounded-md p-4">
+              <motion.div 
+                className="mt-6 bg-blue-50 rounded-md p-4"
+                variants={itemVariants}
+              >
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <svg className="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -115,20 +165,33 @@ const ServiceBenefits = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
           
           {/* Dryer Vent Cleaning Benefits */}
-          <div>
-            <div className="bg-white rounded-lg p-6 shadow-lg mb-6">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="bg-white rounded-lg p-6 shadow-lg mb-6"
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            >
               <h3 className="text-3xl font-bold text-shark-blue mb-6 pb-4 border-b border-gray-200">
                 Dryer Vent & Chimney Cleaning Benefits
               </h3>
               
               <div className="space-y-8">
                 {dryerVentBenefits.map((benefit, index) => (
-                  <div key={index} className="flex">
+                  <motion.div 
+                    key={index} 
+                    className="flex"
+                    variants={itemVariants}
+                  >
                     <div className="flex-shrink-0 mr-4">
                       {benefit.icon}
                     </div>
@@ -136,20 +199,28 @@ const ServiceBenefits = () => {
                       <h4 className="text-xl font-semibold text-shark-darkBlue mb-2">{benefit.title}</h4>
                       <p className="text-gray-600">{benefit.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
               
               <div className="mt-8 flex justify-center">
-                <a href="tel:8776524343">
-                  <Button className="bg-shark-blue hover:bg-shark-darkBlue text-lg">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Schedule Cleaning Service
-                  </Button>
+                <a href="tel:8778888431">
+                  <motion.div 
+                    whileHover={{ scale: 1.05 }} 
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button className="bg-shark-blue hover:bg-shark-darkBlue text-lg">
+                      <Phone className="mr-2 h-5 w-5" />
+                      Schedule Cleaning Service
+                    </Button>
+                  </motion.div>
                 </a>
               </div>
               
-              <div className="mt-6 bg-red-50 rounded-md p-4">
+              <motion.div 
+                className="mt-6 bg-red-50 rounded-md p-4"
+                variants={itemVariants}
+              >
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <svg className="h-5 w-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
@@ -163,22 +234,30 @@ const ServiceBenefits = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
         
-        <div className="mt-12 text-center">
+        <motion.div 
+          className="mt-12 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
           <p className="text-xl text-shark-darkBlue mb-6">
             Professional cleaning isn't just about comfort—it's about protecting your health, home, and finances.
           </p>
-          <a href="tel:8776524343">
-            <Button size="lg" className="bg-shark-yellow hover:bg-yellow-500 text-shark-darkBlue text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Call To Inquire About A Free Inspection
-            </Button>
+          <a href="tel:8778888431">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button size="lg" className="bg-shark-yellow hover:bg-yellow-500 text-shark-darkBlue text-lg">
+                <Phone className="mr-2 h-5 w-5" />
+                Call To Inquire About A Free Inspection
+              </Button>
+            </motion.div>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
