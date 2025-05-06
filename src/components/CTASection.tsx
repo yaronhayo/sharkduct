@@ -1,36 +1,60 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, CalendarDays } from 'lucide-react';
+import { Phone, CalendarDays, Ticket } from 'lucide-react';
 import BookingDialog from './BookingDialog';
 import { motion } from 'framer-motion';
 
 const CTASection = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section id="cta" className="section-padding bg-gradient-to-r from-shark-blue to-shark-darkBlue relative overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAtMzR2NmgxOHYtNmgtMTh6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2Nmg2di02aC02em0wIDI0djZoNnYtNmgtNnptMTIgLTI0djZoNnYtNmgtNnptMCAxMnY2aDZ2LTZoLTZ6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2NmgxOHYtNmgtMTh6bS00OCAtNDh2NmgxOHYtNmgtMTh6bTAgMTJ2Nmg2di02aC02em0wIDEydjZoNnYtNmgtNnptMTIgLTM2djZoNnYtNmgtNnptMTIgLTEydjZoNnYtNmgtNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-10"></div>
+      <motion.div 
+        className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAtMzR2NmgxOHYtNmgtMTh6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2Nmg2di02aC02em0wIDI0djZoNnYtNmgtNnptMTIgLTI0djZoNnYtNmgtNnptMCAxMnY2aDZ2LTZoLTZ6bTAgMTJ2NmgxMnYtNmgtMTJ6bTAgMTJ2NmgxOHYtNmgtMTh6bS00OCAtNDh2NmgxOHYtNmgtMTh6bTAgMTJ2Nmg2di02aC02em0wIDEydjZoNnYtNmgtNnptMTIgLTM2djZoNnYtNmgtNnptMTIgLTEydjZoNnYtNmgtNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 1 }}
+      ></motion.div>
 
       <div className="container mx-auto relative z-10">
         <motion.div 
           className="max-w-4xl mx-auto text-center text-white"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
           <motion.h2 
             className="text-3xl md:text-4xl font-bold mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            variants={itemVariants}
           >
             Is Your Family Breathing Austin's Worst Air?
           </motion.h2>
           <motion.p 
             className="text-xl text-white/80 mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            variants={itemVariants}
           >
             Austin & surrounding homes hide a secret: Your air ducts may contain up to 40 pounds of dust, allergens, and pollutants. Don't wait for allergy season to strike again.
           </motion.p>
@@ -38,36 +62,60 @@ const CTASection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <motion.div 
               className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.4 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0,0,0,0.1)" }}
+              variants={itemVariants}
             >
-              <div className="text-5xl font-bold text-shark-accent mb-4">1</div>
+              <motion.div 
+                className="text-5xl font-bold text-shark-accent mb-4"
+                initial={{ scale: 0.8 }}
+                whileInView={{ scale: 1 }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 300, 
+                  damping: 10,
+                  delay: 0.2
+                }}
+              >1</motion.div>
               <h3 className="text-xl font-bold mb-2">Connect</h3>
               <p className="text-white/80">5-minute call with our Texas-based specialists</p>
             </motion.div>
             
             <motion.div 
               className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.5 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0,0,0,0.1)" }}
+              variants={itemVariants}
             >
-              <div className="text-5xl font-bold text-shark-accent mb-4">2</div>
+              <motion.div
+                className="text-5xl font-bold text-shark-accent mb-4"
+                initial={{ scale: 0.8 }}
+                whileInView={{ scale: 1 }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 300, 
+                  damping: 10,
+                  delay: 0.3
+                }}
+              >2</motion.div>
               <h3 className="text-xl font-bold mb-2">Discover</h3>
               <p className="text-white/80">We identify hidden problems affecting your family's health</p>
             </motion.div>
             
             <motion.div 
               className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.6 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0,0,0,0.1)" }}
+              variants={itemVariants}
             >
-              <div className="text-5xl font-bold text-shark-accent mb-4">3</div>
+              <motion.div
+                className="text-5xl font-bold text-shark-accent mb-4"
+                initial={{ scale: 0.8 }}
+                whileInView={{ scale: 1 }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 300, 
+                  damping: 10,
+                  delay: 0.4
+                }}
+              >3</motion.div>
               <h3 className="text-xl font-bold mb-2">Breathe Easy</h3>
               <p className="text-white/80">Join thousands of satisfied Central Texas families</p>
             </motion.div>
@@ -75,9 +123,7 @@ const CTASection = () => {
           
           <motion.div 
             className="bg-white/5 backdrop-blur-sm rounded-lg p-8 flex flex-col md:flex-row md:items-center justify-between"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
+            variants={itemVariants}
           >
             <div className="mb-6 md:mb-0 md:mr-6 text-left">
               <h3 className="text-2xl font-bold mb-2">Texas Values</h3>
@@ -109,7 +155,7 @@ const CTASection = () => {
                     className="border-white text-white bg-white/10 hover:bg-white/20 text-lg"
                   >
                     <Phone className="mr-2 h-5 w-5" />
-                    <span>Call (877) 888-8431</span>
+                    <span>(877) 888-8431</span>
                   </Button>
                 </motion.div>
               </a>

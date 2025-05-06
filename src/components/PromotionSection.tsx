@@ -1,8 +1,9 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { PhoneCall } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import { PhoneCall, Ticket, Check } from 'lucide-react';
 import BookingDialog from './BookingDialog';
 
 const PromotionSection = () => {
@@ -43,7 +44,7 @@ const PromotionSection = () => {
   ];
 
   return (
-    <section id="promotions" className="section-padding bg-white">
+    <section id="promotions" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto">
         <h2 className="section-title">Special Offers</h2>
         <p className="section-subtitle">
@@ -53,52 +54,67 @@ const PromotionSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           {promotions.map((promo, index) => (
-            <div key={index} className="relative overflow-hidden">
-              {/* Coupon design inspired by the provided image */}
-              <div className="flex rounded-lg overflow-hidden shadow-md border border-gray-200">
-                {/* Left side - PROMO tag */}
-                <div className="bg-shark-darkBlue text-white w-16 flex flex-col items-center justify-center relative">
-                  <span className="font-bold text-xs tracking-wider uppercase rotate-[-90deg] whitespace-nowrap">PROMO</span>
-                  {/* Dotted line */}
-                  <div className="absolute right-0 top-0 bottom-0 border-r border-dashed border-white h-full"></div>
-                  {/* Circular cutouts */}
-                  <div className="absolute w-6 h-6 bg-white rounded-full -right-3 -top-3"></div>
-                  <div className="absolute w-6 h-6 bg-white rounded-full -right-3 -bottom-3"></div>
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              {/* Redesigned Coupon Card */}
+              <div className="bg-gradient-to-r from-shark-blue to-shark-darkBlue rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                {/* Sale ribbon */}
+                <div className="absolute top-0 right-0">
+                  <div className="bg-shark-accent text-white font-bold py-1 px-3 shadow-md transform rotate-0 origin-top-right">
+                    <span className="text-xs uppercase tracking-wider">Limited Time</span>
+                  </div>
+                </div>
+
+                {/* Ticket Icon */}
+                <div className="absolute top-3 left-3">
+                  <Ticket className="h-6 w-6 text-white/60" />
                 </div>
                 
-                {/* Center - Main content */}
-                <div className="flex-1 flex flex-col bg-shark-darkBlue text-white px-4 py-6">
-                  {/* Price banner with original and sale price */}
-                  <div className="bg-black py-2 px-4 mb-4 -mx-4">
-                    <div className="flex items-baseline">
-                      <span className="text-3xl font-bold mr-3">SALE {promo.price}</span>
-                      <span className="text-xl line-through text-red-500">{promo.originalPrice}</span>
-                    </div>
-                  </div>
-                  
-                  {/* Service name */}
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 uppercase text-center">
+                {/* Title Section */}
+                <div className="pt-12 pb-4 px-6 text-center border-b border-white/20">
+                  <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide">
                     {promo.title}
                   </h3>
-                  
+                </div>
+                
+                {/* Price Section */}
+                <div className="py-4 bg-white/10 backdrop-blur-sm">
+                  <div className="flex items-center justify-center gap-3">
+                    <span className="text-3xl font-bold text-white">{promo.price}</span>
+                    <span className="text-lg line-through text-red-400">{promo.originalPrice}</span>
+                  </div>
+                </div>
+                
+                {/* Content Section */}
+                <div className="px-6 py-5 bg-gradient-to-b from-white/5 to-transparent">
                   {/* Description */}
-                  <p className="text-sm mb-4 text-white/90 text-center">
+                  <p className="text-sm mb-4 text-white/85 text-center">
                     {promo.description}
                   </p>
                   
-                  {/* Feature list */}
-                  <ul className="mb-4 text-sm">
+                  {/* Benefits */}
+                  <ul className="mb-6 space-y-3">
                     {promo.benefits.map((benefit, i) => (
-                      <li key={i} className="mb-2 flex items-start">
-                        <span className="mr-2 text-white">✓</span>
-                        <span>{benefit}</span>
+                      <li key={i} className="flex items-start">
+                        <Check className="h-5 w-5 text-shark-accent mr-2 flex-shrink-0" />
+                        <span className="text-sm text-white/90">{benefit}</span>
                       </li>
                     ))}
                   </ul>
                   
+                  {/* Dotted Border */}
+                  <div className="border-t border-dashed border-white/30 my-4"></div>
+                  
+                  {/* CTA Button */}
                   <BookingDialog>
                     <Button 
-                      className="mt-auto w-full bg-shark-blue hover:bg-shark-accent"
+                      className="w-full bg-white hover:bg-white/90 text-shark-darkBlue font-semibold"
                     >
                       <PhoneCall className="mr-2 h-4 w-4" />
                       Claim Offer
@@ -106,20 +122,20 @@ const PromotionSection = () => {
                   </BookingDialog>
                 </div>
                 
-                {/* Right side - Vertical text */}
-                <div className="bg-white w-16 flex flex-col items-center justify-center relative">
-                  <div className="absolute w-6 h-6 bg-white rounded-full -left-3 -top-3"></div>
-                  <div className="absolute w-6 h-6 bg-white rounded-full -left-3 -bottom-3"></div>
-                  <span className="font-bold text-sm tracking-wider uppercase rotate-90 whitespace-nowrap text-shark-darkBlue">
-                    {promo.title.split(' ').slice(0, 2).join(' ')}
-                  </span>
-                </div>
+                {/* Bottom edge design */}
+                <div className="bg-white/10 h-3 w-full"></div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         
-        <div className="mt-12 bg-shark-gray rounded-lg p-6 shadow-md">
+        <motion.div 
+          className="mt-12 bg-shark-gray rounded-lg p-6 shadow-md"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0">
               <h3 className="text-2xl font-bold text-shark-darkBlue mb-2">
@@ -144,7 +160,7 @@ const PromotionSection = () => {
               </BookingDialog>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

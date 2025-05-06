@@ -8,18 +8,39 @@ import { motion } from 'framer-motion';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
+  // Animation variants
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+  
   return (
     <footer className="bg-shark-darkBlue text-white">
       <div className="container mx-auto px-4 py-8">
         {/* Logo and Contact Information */}
         <motion.div 
           className="mb-6 flex flex-col items-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
           <motion.div 
             className="mb-4"
+            variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
@@ -33,17 +54,21 @@ const Footer = () => {
           </motion.div>
           <motion.div 
             className="flex justify-center items-center mb-3"
+            variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <Phone className="h-5 w-5 text-shark-accent mr-2" />
-            <a href="tel:877-888-8431" className="text-white hover:text-shark-accent transition-colors">
+            <a href="tel:8778888431" className="text-white hover:text-shark-accent transition-colors">
               (877) 888-8431
             </a>
           </motion.div>
-          <p className="text-gray-300">
+          <motion.p 
+            className="text-gray-300"
+            variants={itemVariants}
+          >
             Serving Austin & surrounding areas
-          </p>
+          </motion.p>
         </motion.div>
         
         <Separator className="bg-gray-700 my-6" />
@@ -52,19 +77,25 @@ const Footer = () => {
         <div className="text-center">
           <motion.div 
             className="flex flex-wrap justify-center gap-4 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
           >
-            <Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors text-sm">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="text-gray-300 hover:text-white transition-colors text-sm">Terms of Service</Link>
+            <motion.div variants={itemVariants}>
+              <Link to="/privacy-policy" className="text-gray-300 hover:text-white transition-colors text-sm">Privacy Policy</Link>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Link to="/terms-of-service" className="text-gray-300 hover:text-white transition-colors text-sm">Terms of Service</Link>
+            </motion.div>
           </motion.div>
           
           <motion.p 
             className="text-gray-400 text-sm mb-4"
+            variants={itemVariants}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
           >
             &copy; {currentYear} Shark Duct Cleaning. All rights reserved.
           </motion.p>
@@ -72,8 +103,9 @@ const Footer = () => {
           <motion.div 
             className="text-xs text-gray-500 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
           >
             <p className="mb-2">
               Licensed, Bonded & Insured | NADCA Certified
