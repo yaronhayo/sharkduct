@@ -16,45 +16,45 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="text-white">
             <motion.h1 
-              className="text-3xl md:text-4xl font-bold mb-6"
+              className="text-4xl md:text-5xl font-bold mb-6"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              Is Your Austin Home Hiding Dangerous Air Contaminants?
+              Hidden Dangers in Your Home's Air?
             </motion.h1>
             
             <motion.p 
-              className="text-lg mb-6 text-gray-100"
+              className="text-xl mb-6 text-gray-100"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Texas summers mean closed windows and recirculating air. Are your loved ones inhaling hidden contaminants from your neglected duct system?
+              Breathe easier with professional duct cleaning. Protect your family's health today.
             </motion.p>
             
             <motion.div 
-              className="space-y-4 mb-6"
+              className="space-y-4 mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <div className="flex items-start">
                 <Check className="w-5 h-5 text-shark-accent mr-2 flex-shrink-0 mt-0.5" />
-                <span>Breathe cleaner air free from harmful allergens</span>
+                <span>Eliminate allergens & improve air quality</span>
               </div>
               <div className="flex items-start">
                 <Check className="w-5 h-5 text-shark-accent mr-2 flex-shrink-0 mt-0.5" />
-                <span>Save on energy bills with efficient airflow</span>
+                <span>Reduce energy costs with efficient airflow</span>
               </div>
               <div className="flex items-start">
-                <Check className="w-5 h-5 text-shark-accent mr-2 flex-shrink-0 mt-0.5" />
-                <span>Same-day service for Austin & surrounding areas</span>
+                <Shield className="w-5 h-5 text-shark-accent mr-2 flex-shrink-0 mt-0.5" />
+                <span className="font-semibold">Over 10,000 Texas homes protected</span>
               </div>
             </motion.div>
             
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 mb-6"
+              className="flex flex-col sm:flex-row gap-4 mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -72,23 +72,13 @@ const Hero = () => {
                 </Button>
               </a>
             </motion.div>
-            
-            <motion.div 
-              className="flex items-center mb-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <Shield className="w-6 h-6 text-shark-accent mr-2" />
-              <span className="font-semibold">Over 10,000 TX Homes Protected</span>
-            </motion.div>
 
-            {/* Trust Badges - Moved below "Over 10,000 TX Homes Protected" */}
+            {/* Trust Badges */}
             <motion.div 
               className="grid grid-cols-3 gap-3 md:gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
               <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 hover:bg-white/20 transition-all duration-300">
                 <span className="text-xs font-medium text-shark-accent">NADCA</span>
@@ -113,7 +103,7 @@ const Hero = () => {
             >
               <Card className="bg-white shadow-lg">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-shark-darkBlue mb-4">Beat Central Texas Allergy Season Now</h3>
+                  <h3 className="text-xl font-bold text-shark-darkBlue mb-4">Schedule Your Free Inspection</h3>
                   
                   <form className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -142,7 +132,7 @@ const Hero = () => {
                         <option value="">Location</option>
                         <option value="austin">Austin</option>
                         <option value="sanmarcos">San Marcos</option>
-                        <option value="surrounding">Other Surrounding Areas</option>
+                        <option value="surrounding">Other Areas</option>
                       </select>
                       <select 
                         className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
@@ -154,16 +144,10 @@ const Hero = () => {
                       </select>
                     </div>
                     
-                    <textarea
-                      placeholder="Notes (Optional)"
-                      rows={2}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue"
-                    ></textarea>
-                    
                     <div className="bg-gray-100 p-3 rounded-md mb-4">
                       <div className="flex items-center text-shark-darkBlue">
                         <Shield className="w-5 h-5 text-shark-accent mr-2" />
-                        <span className="text-sm font-medium">Texas Values: 10% OFF for military, Veterans & seniors</span>
+                        <span className="text-sm font-medium">10% OFF for military, Veterans & seniors</span>
                       </div>
                     </div>
                     
