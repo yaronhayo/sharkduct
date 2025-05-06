@@ -3,7 +3,6 @@
 <IfModule mod_mime.c>
   AddType application/javascript .js
   AddType application/json .json
-  AddType text/javascript .mjs
   AddType application/javascript .mjs
 </IfModule>
 
@@ -14,12 +13,16 @@
     Header set X-Content-Type-Options "nosniff"
   </FilesMatch>
   
-  # Set correct content type for JS modules
+  # Set correct content type for JS modules - Ensuring proper MIME type
+  <FilesMatch "\.js$">
+    Header set Content-Type "application/javascript"
+  </FilesMatch>
+  
   <FilesMatch "\.mjs$">
     Header set Content-Type "application/javascript"
   </FilesMatch>
   
-  # Add Content Security Policy header
+  # Add Content Security Policy header with unsafe-eval explicitly allowed
   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.gpteng.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://sharkduct.com; connect-src 'self';"
 </IfModule>
 
