@@ -19,10 +19,12 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +53,7 @@ const Navbar = () => {
     if (section) {
       // Get the y-coordinate of the section
       const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-      // Adjust to 80px offset instead of 100px
+      // Adjust to 80px offset
       const scrollPosition = sectionTop - 80;
       
       window.scrollTo({
@@ -87,7 +89,7 @@ const Navbar = () => {
           </a>
         </motion.div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - Only show on desktop */}
         <div className="hidden md:flex items-center">
           <NavigationMenu className="mr-4">
             <NavigationMenuList>
@@ -131,34 +133,16 @@ const Navbar = () => {
             </motion.div>
           </a>
 
-          {/* Mobile Navigation Trigger */}
+          {/* Mobile Navigation Trigger - changed to only show mobile menu button, without the menu content */}
           <div className="md:hidden ml-2">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  size="icon" 
-                  className={`border-none shadow-none ${!isScrolled && 'text-white'}`}
-                >
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[250px] sm:w-[300px]">
-                <div className="py-6">
-                  <nav className="flex flex-col gap-4">
-                    {menuItems.map((item) => (
-                      <a
-                        key={item.name}
-                        onClick={() => scrollToSection(item.href)} 
-                        className="text-lg font-medium text-shark-darkBlue hover:text-shark-blue transition-colors cursor-pointer px-2 py-1"
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
-              </SheetContent>
-            </Sheet>
+            <Button 
+              variant="outline" 
+              size="icon" 
+              className={`border-none shadow-none ${!isScrolled && 'text-white'}`}
+              onClick={() => console.log("Menu button clicked - Navigation removed from mobile view")}
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
           </div>
         </div>
       </div>
