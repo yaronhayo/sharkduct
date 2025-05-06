@@ -1,52 +1,23 @@
 
-# Enable Apache rewrite engine
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  
-  # Don't rewrite files or directories
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteRule ^ - [L]
-  
-  # Rewrite everything else to index.html
-  RewriteRule ^ index.html [L]
-</IfModule>
-
-# Set proper MIME types
+# Set correct MIME type for JavaScript modules
 <IfModule mod_mime.c>
-  # JavaScript
   AddType application/javascript .js
-  AddType application/javascript .mjs
-  AddType application/javascript .jsx
-  
-  # JSON
   AddType application/json .json
-  
-  # CSS
-  AddType text/css .css
-  
-  # Fonts
-  AddType font/woff .woff
-  AddType font/woff2 .woff2
-  AddType application/x-font-ttf .ttf
-  AddType application/vnd.ms-fontobject .eot
-  AddType image/svg+xml .svg
 </IfModule>
 
-# Set cross-origin headers
+# Enable CORS for font files and other assets
 <IfModule mod_headers.c>
-  <FilesMatch "\.(js|jsx|mjs|css|json|woff|woff2|ttf|eot|svg)$">
+  <FilesMatch "\.(js|css|json|woff|woff2|ttf|eot|svg)$">
     Header set Access-Control-Allow-Origin "*"
-    Header set X-Content-Type-Options "nosniff"
   </FilesMatch>
 </IfModule>
 
-# Disable directory browsing
-Options -Indexes
-
-# Prevent viewing of .htaccess file
-<Files .htaccess>
-  Order allow,deny
-  Deny from all
-</Files>
+# Redirect all requests to index.html for SPA routing
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
