@@ -88,7 +88,10 @@ const Navbar = () => {
                   <NavigationMenuLink
                     className={cn(
                       navigationMenuTriggerStyle(),
-                      "bg-transparent hover:bg-transparent hover:text-shark-blue text-shark-darkBlue"
+                      "bg-transparent hover:bg-transparent",
+                      isScrolled 
+                        ? "hover:text-shark-blue text-shark-darkBlue" 
+                        : "text-white hover:text-gray-200"
                     )}
                     onClick={() => scrollToSection(item.href)}
                   >
@@ -124,7 +127,11 @@ const Navbar = () => {
           <div className="md:hidden ml-2">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="border-none shadow-none">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className={`border-none shadow-none ${!isScrolled && 'text-white'}`}
+                >
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
