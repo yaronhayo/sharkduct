@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import { PhoneCall, Ticket, Check } from 'lucide-react';
-import BookingDialog from './BookingDialog';
+import BookingDialog from './booking/BookingDialog';
 
 const PromotionSection = () => {
   const promotions = [
