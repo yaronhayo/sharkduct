@@ -9,19 +9,15 @@ const BeforeAfterSection = () => {
       id: 1,
       title: "Air Duct Cleaning",
       description: "Removal of mold, dust, and debris from ventilation systems",
-      beforeImage: "/lovable-uploads/5dc06ef1-b52b-4d1c-b35f-727b582b1191.png",
-      beforeAlt: "Dirty air duct before cleaning",
-      afterImage: "/lovable-uploads/5dc06ef1-b52b-4d1c-b35f-727b582b1191.png",
-      afterAlt: "Clean air duct after professional cleaning"
+      image: "/lovable-uploads/5dc06ef1-b52b-4d1c-b35f-727b582b1191.png",
+      alt: "Air duct cleaning before and after comparison"
     },
     {
       id: 2,
       title: "HVAC System Cleaning",
       description: "Professional cleaning of HVAC vents and components",
-      beforeImage: "/lovable-uploads/d18f5eba-36f7-447e-a264-05bca3631008.png",
-      beforeAlt: "Dust-covered HVAC vent before cleaning",
-      afterImage: "/lovable-uploads/d18f5eba-36f7-447e-a264-05bca3631008.png",
-      afterAlt: "Clean HVAC vent after professional service"
+      image: "/lovable-uploads/d18f5eba-36f7-447e-a264-05bca3631008.png",
+      alt: "HVAC system before and after professional cleaning"
     }
   ];
 
@@ -41,31 +37,14 @@ const BeforeAfterSection = () => {
                 <p className="text-sm text-gray-100">{project.description}</p>
               </div>
               <CardContent className="p-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="relative">
-                    <AspectRatio ratio={1/1} className="bg-gray-100 rounded-md overflow-hidden">
-                      <img 
-                        src={project.beforeImage} 
-                        alt={project.beforeAlt}
-                        className="object-cover w-full h-full"
-                      />
-                    </AspectRatio>
-                    <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded font-bold">
-                      BEFORE
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <AspectRatio ratio={1/1} className="bg-gray-100 rounded-md overflow-hidden">
-                      <img 
-                        src={project.afterImage} 
-                        alt={project.afterAlt}
-                        className="object-cover w-full h-full" 
-                      />
-                    </AspectRatio>
-                    <div className="absolute top-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded font-bold">
-                      AFTER
-                    </div>
-                  </div>
+                <div className="relative">
+                  <AspectRatio ratio={16/9} className="bg-gray-100 rounded-md overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.alt}
+                      className="object-cover w-full h-full"
+                    />
+                  </AspectRatio>
                 </div>
               </CardContent>
             </Card>
