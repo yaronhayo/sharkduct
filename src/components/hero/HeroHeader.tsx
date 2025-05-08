@@ -4,8 +4,11 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Phone, CalendarDays, Check, Shield } from 'lucide-react';
 import BookingDialog from '../booking/BookingDialog';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroHeader = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="text-white">
       <motion.h1 
@@ -76,22 +79,22 @@ export default HeroHeader;
 const HeroTrustBadges = () => {
   return (
     <motion.div 
-      className="grid grid-cols-3 gap-3 md:gap-6"
+      className="grid grid-cols-3 gap-2 md:gap-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.5 }}
     >
-      <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 hover:bg-white/20 transition-all duration-300">
+      <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-2 py-2 md:px-3 md:py-2 hover:bg-white/20 transition-all duration-300">
         <span className="text-xs font-medium text-shark-accent">NADCA</span>
-        <span className="text-sm font-bold text-white">Certified</span>
+        <span className="text-xs md:text-sm font-bold text-white">Certified</span>
       </div>
-      <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 hover:bg-white/20 transition-all duration-300">
+      <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-2 py-2 md:px-3 md:py-2 hover:bg-white/20 transition-all duration-300">
         <span className="text-xs font-medium text-shark-accent">18+ Years</span>
-        <span className="text-sm font-bold text-white">Experience</span>
+        <span className="text-xs md:text-sm font-bold text-white">Experience</span>
       </div>
-      <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 hover:bg-white/20 transition-all duration-300">
+      <div className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-lg px-2 py-2 md:px-3 md:py-2 hover:bg-white/20 transition-all duration-300">
         <span className="text-xs font-medium text-shark-accent">4.9 Stars</span>
-        <span className="text-sm font-bold text-white">2,600+ Reviews</span>
+        <span className="text-xs md:text-sm font-bold text-white">2,600+ Reviews</span>
       </div>
     </motion.div>
   );
