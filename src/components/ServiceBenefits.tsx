@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone } from 'lucide-react';
@@ -181,7 +182,7 @@ const ServiceBenefits = () => {
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
               <h3 className="text-3xl font-bold text-shark-blue mb-6 pb-4 border-b border-gray-200">
-                Dryer Vent & Chimney Cleaning Benefits
+                Dryer Vent Cleaning Benefits
               </h3>
               
               <div className="space-y-8">

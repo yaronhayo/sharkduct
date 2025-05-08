@@ -29,16 +29,5 @@ export const promotionData: Promotion[] = [
       "Improves dryer efficiency",
       "Extends appliance lifespan"
     ]
-  },
-  {
-    title: "Full Chimney Inspection",
-    price: "$49",
-    originalPrice: "$99",
-    description: "Comprehensive chimney inspection by certified professionals.",
-    benefits: [
-      "Identifies structural issues",
-      "Prevents dangerous blockages",
-      "Includes detailed safety report"
-    ]
   }
 ];

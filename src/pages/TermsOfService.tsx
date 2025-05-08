@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -46,7 +47,7 @@ const TermsOfService = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <h2 className="text-2xl font-semibold text-shark-darkBlue mb-4">Description of Services</h2>
-              <p className="mb-4">Shark Duct Cleaning provides air duct cleaning, dryer vent cleaning, chimney inspection, and related services for residential properties in Austin and surrounding areas. The specific services provided will be agreed upon between you and Shark Duct Cleaning prior to the commencement of any work.</p>
+              <p className="mb-4">Shark Duct Cleaning provides air duct cleaning, dryer vent cleaning, and related services for residential properties in Austin and surrounding areas. The specific services provided will be agreed upon between you and Shark Duct Cleaning prior to the commencement of any work.</p>
             </motion.section>
             
             <motion.section 
