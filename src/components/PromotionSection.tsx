@@ -16,7 +16,7 @@ const PromotionSection = () => {
           Call today to schedule your appointment and mention these promotions."
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
           {promotionData.map((promo, index) => (
             <PromotionCard key={index} promotion={promo} index={index} />
           ))}

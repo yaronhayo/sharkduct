@@ -194,7 +194,7 @@ const ReviewsCarousel = () => {
         
         <div className="mt-12 text-center">
           <div className="inline-flex items-center mb-6">
-            <div className="text-4xl font-bold text-shark-blue mr-2">4.9</div>
+            <div className="text-4xl font-bold text-shark-blue mr-2">5.0</div>
             <div className="flex">
               {[1, 2, 3, 4, 5].map((_, i) => (
                 <svg 
