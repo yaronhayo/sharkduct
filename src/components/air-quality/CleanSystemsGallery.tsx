@@ -11,14 +11,19 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Card, CardContent } from '@/components/ui/card';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+// Placeholder images until the user provides real clean systems images
 const cleanSystemsImages = [
   {
-    src: "/lovable-uploads/d6da2eee-7424-426b-ae61-4b23cb057984.png",
+    src: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1",
     alt: "Clean air duct system after professional cleaning"
   },
   {
-    src: "/lovable-uploads/f2dd6582-918c-41e0-a92f-693ee4794c2b.png",
+    src: "https://images.unsplash.com/photo-1584465144068-a2b00ca3a95c",
     alt: "Freshly cleaned HVAC components"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1",
+    alt: "Professional air duct cleaning results"
   }
 ];
 
