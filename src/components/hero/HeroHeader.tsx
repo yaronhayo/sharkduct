@@ -17,8 +17,8 @@ const HeroHeader = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <span className="block">Austin & San</span>
-        <span className="block">Antonio: <span className="text-shark-accent">Stop</span></span>
+        <span className="block">Austin &</span>
+        <span className="block">Surrounding Areas: <span className="text-shark-accent">Stop</span></span>
         <span className="block"><span className="text-shark-accent">Breathing</span></span>
         <span className="block">Contaminated Air</span>
       </motion.h1>
