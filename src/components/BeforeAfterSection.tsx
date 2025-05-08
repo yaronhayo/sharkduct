@@ -9,14 +9,14 @@ const BeforeAfterSection = () => {
       id: 1,
       title: "Air Duct Cleaning",
       description: "Removal of mold, dust, and debris from ventilation systems",
-      image: "/lovable-uploads/5dc06ef1-b52b-4d1c-b35f-727b582b1191.png",
+      image: "/lovable-uploads/d6da2eee-7424-426b-ae61-4b23cb057984.png",
       alt: "Air duct cleaning before and after comparison"
     },
     {
       id: 2,
       title: "HVAC System Cleaning",
       description: "Professional cleaning of HVAC vents and components",
-      image: "/lovable-uploads/d18f5eba-36f7-447e-a264-05bca3631008.png",
+      image: "/lovable-uploads/f2dd6582-918c-41e0-a92f-693ee4794c2b.png",
       alt: "HVAC system before and after professional cleaning"
     }
   ];

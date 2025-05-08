@@ -12,6 +12,7 @@ import FAQSection from '@/components/FAQSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import CleanSystemsGallery from '@/components/air-quality/CleanSystemsGallery';
+import DirtyDuctsGallery from '@/components/air-quality/DirtyDuctsGallery';
 
 const Index = () => {
   return (
@@ -20,6 +21,9 @@ const Index = () => {
       <Hero />
       <section id="air-quality" className="scroll-mt-24">
         <AirQualitySection />
+      </section>
+      <section id="dirty-ducts" className="scroll-mt-24">
+        <DirtyDuctsGallery />
       </section>
       <section id="clean-systems" className="scroll-mt-24">
         <CleanSystemsGallery />
