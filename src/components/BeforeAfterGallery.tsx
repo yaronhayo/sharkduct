@@ -7,12 +7,12 @@ const BeforeAfterGallery = () => {
   const beforeAfterImages = [
     {
       id: 1,
-      src: "/photos/duct-before-after-1.png",
+      src: "/uploads/9072da68-359b-42d6-8b0c-db430694023b.png",
       alt: "Before and after air duct cleaning showing dramatic removal of mold and dust buildup"
     },
     {
       id: 2, 
-      src: "/photos/duct-before-after-2.png",
+      src: "/uploads/dfba786c-257d-4baf-9902-9f4854922e10.png",
       alt: "Before and after HVAC system cleaning showing removal of dust accumulation"
     }
   ];
