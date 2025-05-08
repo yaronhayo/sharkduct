@@ -7,13 +7,13 @@ const BeforeAfterGallery = () => {
   const beforeAfterImages = [
     {
       id: 1,
-      src: "https://sharkductimages.s3.us-east-2.amazonaws.com/before-after.JPG",
-      alt: "Before and after duct cleaning comparison"
+      src: "/photos/duct-before-after-1.png",
+      alt: "Before and after duct cleaning comparison showing dirty vs clean duct"
     },
     {
       id: 2, 
-      src: "https://sharkductimages.s3.us-east-2.amazonaws.com/before-after-2.JPG",
-      alt: "Before and after air duct cleaning results"
+      src: "/photos/duct-before-after-2.png",
+      alt: "Before and after air handler cleaning results"
     }
   ];
   

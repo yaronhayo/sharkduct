@@ -26,7 +26,7 @@
   </FilesMatch>
   
   # Add Content Security Policy header with Google Tag Manager allowed
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.gpteng.co https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://sharkduct.com https://*.s3.amazonaws.com https://s3.amazonaws.com; connect-src 'self' https://www.google-analytics.com; frame-src https://www.googletagmanager.com;"
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.gpteng.co https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://sharkduct.com; connect-src 'self' https://www.google-analytics.com; frame-src https://www.googletagmanager.com;"
 </IfModule>
 
 # Redirect all requests to index.html for SPA routing
