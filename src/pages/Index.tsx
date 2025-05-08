@@ -5,7 +5,6 @@ import Hero from '@/components/Hero';
 import AirQualitySection from '@/components/AirQualitySection';
 import ServiceBenefits from '@/components/ServiceBenefits';
 import PromotionSection from '@/components/PromotionSection';
-import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import ReviewsCarousel from '@/components/ReviewsCarousel';
 import FAQSection from '@/components/FAQSection';
@@ -25,9 +24,6 @@ const Index = () => {
       </div>
       <div id="why-us">
         <WhyChooseUs />
-      </div>
-      <div id="before-after">
-        <BeforeAfterGallery />
       </div>
       <div id="promotions">
         <PromotionSection />
