@@ -17,6 +17,9 @@ const BeforeAfterGallery = () => {
     }
   ];
   
+  // Add console logs to debug image loading
+  console.log("Image paths:", beforeAfterImages.map(img => img.src));
+  
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -57,6 +60,12 @@ const BeforeAfterGallery = () => {
                       alt={image.alt} 
                       className="w-full h-auto object-cover"
                       loading="lazy"
+                      onError={(e) => {
+                        console.error(`Error loading image: ${image.src}`);
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement.innerHTML += `<div class="p-4 text-red-500">Image failed to load</div>`;
+                      }}
+                      onLoad={() => console.log(`Image loaded successfully: ${image.src}`)}
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                       <h3 className="text-white font-semibold">Before & After</h3>
