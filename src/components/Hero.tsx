@@ -6,7 +6,7 @@ import HeroBackground from './hero/HeroBackground';
 
 const Hero = () => {
   return (
-    <div className="relative bg-gradient-to-r from-shark-darkBlue to-shark-blue pt-32 pb-16 md:py-32" id="booking">
+    <div className="relative bg-gradient-to-r from-shark-darkBlue to-shark-blue pt-32 pb-16 md:py-32">
       <HeroBackground />
 
       <div className="container mx-auto px-4 relative z-10">
