@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, CalendarDays } from 'lucide-react';
-import BookingDialog from './BookingDialog';
+import BookingDialog from './booking/BookingDialog';
 import { motion } from 'framer-motion';
 import {
   NavigationMenu,

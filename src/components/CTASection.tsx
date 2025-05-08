@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, CalendarDays, Ticket } from 'lucide-react';
-import BookingDialog from './BookingDialog';
+import { Phone, CalendarDays } from 'lucide-react';
+import BookingDialog from './booking/BookingDialog';
 import { motion } from 'framer-motion';
 
 const CTASection = () => {
