@@ -14,11 +14,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils";
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,7 +80,7 @@ const Navbar = () => {
           </a>
         </motion.div>
 
-        {/* Desktop Navigation - Only show on desktop */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center">
           <NavigationMenu className="mr-4">
             <NavigationMenuList>

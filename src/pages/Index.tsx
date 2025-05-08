@@ -16,22 +16,22 @@ const Index = () => {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <section id="air-quality" className="scroll-mt-20">
+      <section id="air-quality" className="scroll-mt-24">
         <AirQualitySection />
       </section>
-      <section id="benefits" className="scroll-mt-20">
+      <section id="benefits" className="scroll-mt-24">
         <ServiceBenefits />
       </section>
-      <section id="why-us" className="scroll-mt-20">
+      <section id="why-us" className="scroll-mt-24">
         <WhyChooseUs />
       </section>
-      <section id="promotions" className="scroll-mt-20">
+      <section id="promotions" className="scroll-mt-24">
         <PromotionSection />
       </section>
-      <section id="reviews" className="scroll-mt-20">
+      <section id="reviews" className="scroll-mt-24">
         <ReviewsCarousel />
       </section>
-      <section id="faq" className="scroll-mt-20">
+      <section id="faq" className="scroll-mt-24">
         <FAQSection />
       </section>
       <CTASection />

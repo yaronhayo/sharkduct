@@ -16,7 +16,7 @@
     Header set X-Content-Type-Options "nosniff"
   </FilesMatch>
   
-  # Set correct content type for JS modules - Ensuring proper MIME type
+  # Set correct content type for JS modules
   <FilesMatch "\.js$">
     Header set Content-Type "application/javascript"
   </FilesMatch>
@@ -25,18 +25,21 @@
     Header set Content-Type "application/javascript"
   </FilesMatch>
   
-  # Cache static assets
+  # Aggressive cache static assets
   <FilesMatch "\.(jpg|jpeg|png|gif|svg|ico|css|js|woff|woff2|ttf|eot)$">
-    Header set Cache-Control "max-age=31536000, public"
+    Header set Cache-Control "max-age=31536000, public, immutable"
   </FilesMatch>
   
-  # Add Content Security Policy header with unsafe-eval and Cloudflare analytics explicitly allowed
+  # Add Content Security Policy header
   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.gpteng.co https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://sharkduct.com; connect-src 'self';"
 </IfModule>
 
-# Compress text files
+# Compress text files for better performance
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 </IfModule>
 
 # Redirect all requests to index.html for SPA routing
