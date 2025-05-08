@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import AirQualitySection from '@/components/AirQualitySection';
+import BeforeAfterSection from '@/components/BeforeAfterSection';
 import ServiceBenefits from '@/components/ServiceBenefits';
 import PromotionSection from '@/components/PromotionSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
@@ -18,6 +19,9 @@ const Index = () => {
       <Hero />
       <section id="air-quality" className="scroll-mt-24">
         <AirQualitySection />
+      </section>
+      <section id="before-after" className="scroll-mt-24">
+        <BeforeAfterSection />
       </section>
       <section id="benefits" className="scroll-mt-24">
         <ServiceBenefits />
