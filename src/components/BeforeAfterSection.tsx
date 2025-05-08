@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeader from './promotions/SectionHeader';
-import { ArrowLeftRight } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -45,35 +44,30 @@ const BeforeAfterSection = () => {
               {beforeAfterItems.map((item, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2 pl-4 md:pl-6">
                   <div className="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                    <div className="relative">
-                      <div className="grid grid-cols-2 gap-1">
-                        <div className="relative">
-                          <div className="aspect-square overflow-hidden">
-                            <img 
-                              src={item.beforeImg} 
-                              alt="Before cleaning" 
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="absolute top-2 left-2 bg-shark-darkBlue/90 text-white text-xs font-semibold py-1 px-2 rounded-md">
-                            BEFORE
-                          </div>
+                    <div className="grid grid-cols-2 gap-4 p-4">
+                      <div className="relative">
+                        <div className="aspect-square overflow-hidden rounded-lg">
+                          <img 
+                            src={item.beforeImg} 
+                            alt="Before cleaning" 
+                            className="w-full h-full object-cover"
+                          />
                         </div>
-                        <div className="relative">
-                          <div className="aspect-square overflow-hidden">
-                            <img 
-                              src={item.afterImg} 
-                              alt="After cleaning" 
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="absolute top-2 right-2 bg-shark-accent/90 text-white text-xs font-semibold py-1 px-2 rounded-md">
-                            AFTER
-                          </div>
+                        <div className="absolute top-2 left-2 bg-shark-darkBlue/90 text-white text-xs font-semibold py-1 px-2 rounded-md">
+                          BEFORE
                         </div>
                       </div>
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg">
-                        <ArrowLeftRight className="h-5 w-5 text-shark-blue" />
+                      <div className="relative">
+                        <div className="aspect-square overflow-hidden rounded-lg">
+                          <img 
+                            src={item.afterImg} 
+                            alt="After cleaning" 
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="absolute top-2 right-2 bg-shark-accent/90 text-white text-xs font-semibold py-1 px-2 rounded-md">
+                          AFTER
+                        </div>
                       </div>
                     </div>
                     <div className="p-5">
