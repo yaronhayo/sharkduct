@@ -18,7 +18,6 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -55,7 +54,6 @@ const Navbar = () => {
         top: scrollPosition,
         behavior: 'smooth'
       });
-      setIsOpen(false);
     }
   };
 
@@ -127,8 +125,6 @@ const Navbar = () => {
               </Button>
             </motion.div>
           </a>
-
-          {/* Mobile Navigation Button - completely removed */}
         </div>
       </div>
     </motion.nav>

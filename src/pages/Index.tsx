@@ -13,30 +13,30 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <div id="air-quality">
+      <section id="air-quality" className="scroll-mt-20">
         <AirQualitySection />
-      </div>
-      <div id="benefits">
+      </section>
+      <section id="benefits" className="scroll-mt-20">
         <ServiceBenefits />
-      </div>
-      <div id="why-us">
+      </section>
+      <section id="why-us" className="scroll-mt-20">
         <WhyChooseUs />
-      </div>
-      <div id="promotions">
+      </section>
+      <section id="promotions" className="scroll-mt-20">
         <PromotionSection />
-      </div>
-      <div id="reviews">
+      </section>
+      <section id="reviews" className="scroll-mt-20">
         <ReviewsCarousel />
-      </div>
-      <div id="faq">
+      </section>
+      <section id="faq" className="scroll-mt-20">
         <FAQSection />
-      </div>
+      </section>
       <CTASection />
       <Footer />
-    </div>
+    </main>
   );
 };
 
