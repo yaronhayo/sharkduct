@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import DirtyDuctsGallery from './air-quality/DirtyDuctsGallery';
 
 const AirQualitySection = () => {
   const facts = [
@@ -31,9 +32,10 @@ const AirQualitySection = () => {
           Maintaining clean air ducts is crucial for your family's health and wellbeing.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 mt-10">
+        {/* Health Impacts Section */}
+        <div className="mt-10 mb-12">
+          <h3 className="text-2xl font-bold text-shark-blue mb-6">Health Impacts of Poor Air Quality</h3>
           <div className="bg-shark-gray rounded-lg p-6 shadow-md animate-float card-hover">
-            <h3 className="text-2xl font-bold text-shark-blue mb-4">Health Impacts of Poor Air Quality</h3>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -61,10 +63,13 @@ const AirQualitySection = () => {
               </li>
             </ul>
           </div>
-          
-          <div className="bg-shark-gray rounded-lg p-6 shadow-md animate-float card-hover">
-            <h3 className="text-2xl font-bold text-shark-blue mb-4">What Lurks in Your Air Ducts</h3>
-            <ul className="space-y-3 text-gray-700">
+        </div>
+        
+        {/* What Lurks Section with Gallery */}
+        <div className="mt-16 mb-12">
+          <h3 className="text-2xl font-bold text-shark-blue mb-6">What Lurks in Your Air Ducts</h3>
+          <div className="bg-shark-gray rounded-lg p-6 shadow-md animate-float card-hover mb-8">
+            <ul className="space-y-3 text-gray-700 mb-6">
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-shark-blue mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -90,10 +95,17 @@ const AirQualitySection = () => {
                 <span>Bacteria and viruses that can contribute to illness</span>
               </li>
             </ul>
+            
+            {/* Dirty Ducts Gallery */}
+            <div className="mt-6">
+              <p className="text-lg font-semibold text-center mb-4">See what we've found in home duct systems:</p>
+              <DirtyDuctsGallery />
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        {/* Air Quality Facts */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-16">
           {facts.map((fact, index) => (
             <Card key={index} className="bg-white shadow-lg overflow-hidden border-0 card-hover">
               <CardContent className="p-6 text-center">

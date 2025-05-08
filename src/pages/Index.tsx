@@ -11,6 +11,7 @@ import ReviewsCarousel from '@/components/ReviewsCarousel';
 import FAQSection from '@/components/FAQSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+import CleanSystemsGallery from '@/components/air-quality/CleanSystemsGallery';
 
 const Index = () => {
   return (
@@ -19,6 +20,9 @@ const Index = () => {
       <Hero />
       <section id="air-quality" className="scroll-mt-24">
         <AirQualitySection />
+      </section>
+      <section id="clean-systems" className="scroll-mt-24">
+        <CleanSystemsGallery />
       </section>
       <section id="before-after" className="scroll-mt-24">
         <BeforeAfterSection />
