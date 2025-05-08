@@ -1,30 +1,21 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 
 const BeforeAfterGallery = () => {
-  const [imageErrors, setImageErrors] = useState<{[key: number]: boolean}>({});
-  
   const beforeAfterImages = [
     {
       id: 1,
       src: "https://sharkductimages.s3.us-east-2.amazonaws.com/before-after.JPG",
-      fallbackSrc: "https://placehold.co/600x400?text=Before+and+After",
       alt: "Before and after duct cleaning comparison"
     },
     {
       id: 2, 
       src: "https://sharkductimages.s3.us-east-2.amazonaws.com/before-after-2.JPG",
-      fallbackSrc: "https://placehold.co/600x400?text=Before+and+After",
       alt: "Before and after air duct cleaning results"
     }
   ];
-
-  const handleImageError = (id: number) => {
-    console.error(`Failed to load image with ID: ${id}`);
-    setImageErrors(prev => ({...prev, [id]: true}));
-  };
   
   return (
     <section className="py-16 bg-gray-50">
@@ -62,11 +53,10 @@ const BeforeAfterGallery = () => {
                 <CardContent className="p-0">
                   <div className="relative">
                     <img 
-                      src={imageErrors[image.id] ? image.fallbackSrc : image.src} 
+                      src={image.src} 
                       alt={image.alt} 
                       className="w-full h-auto object-cover"
                       loading="lazy"
-                      onError={() => handleImageError(image.id)}
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                       <h3 className="text-white font-semibold">Before & After</h3>
