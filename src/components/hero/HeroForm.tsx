@@ -151,7 +151,7 @@ const HeroForm = () => {
               <input type="hidden" name="_captcha" value="false" />
               
               {/* Redirect after submission */}
-              <input type="hidden" name="_next" value="https://www.sharkduct.com/thank-you" />
+              <input type="hidden" name="_next" value="https://sharkduct.com/thank-you.html" />
               
               {/* Remove FormSubmit.co branding, use custom domain */}
               <input type="hidden" name="_sender" value="no-reply@sharkduct.com" />
