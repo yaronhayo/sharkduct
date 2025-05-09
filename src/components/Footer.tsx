@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
-import { Phone } from 'lucide-react';
+import { Phone, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -107,7 +106,7 @@ const Footer = () => {
           </motion.p>
           
           <motion.div 
-            className="text-xs text-gray-500 max-w-2xl mx-auto"
+            className="text-xs text-gray-500 max-w-2xl mx-auto mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -121,6 +120,25 @@ const Footer = () => {
               Offer valid for residential customers only. Cannot be combined with other offers.
               Please contact us for a detailed quote.
             </p>
+          </motion.div>
+          
+          {/* Made with heart by Gett Marketing */}
+          <motion.div
+            className="text-sm text-gray-400 flex items-center justify-center mt-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            Made with <Heart className="h-4 w-4 mx-1 text-red-500 inline" /> by{" "}
+            <a 
+              href="https://gettmarketing.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-shark-accent hover:text-white transition-colors ml-1"
+            >
+              Gett Marketing
+            </a>
           </motion.div>
         </div>
       </div>
