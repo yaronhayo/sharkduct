@@ -78,7 +78,7 @@ const HeroForm = () => {
               onSubmit={handleSubmit}
             >
               {/* FormSubmit.co configuration options */}
-              <input type="hidden" name="_subject" value="🔔 New Inspection Request from ${name} - SharkDuct.com" />
+              <input type="hidden" name="_subject" value="🔔 New Inspection Request - SharkDuct.com" />
               <input type="hidden" name="_cc" value="yaron@gettmarketing.com,sandrahmarketing@gmail.com" />
               
               {/* Spam prevention - honeypot field */}
@@ -90,18 +90,102 @@ const HeroForm = () => {
               {/* Redirect after submission */}
               <input type="hidden" name="_next" value="https://www.sharkduct.com/thank-you" />
               
-              {/* Template customization for better-looking emails */}
-              <input type="hidden" name="_template" value="box" />
+              {/* Custom HTML template */}
+              <input type="hidden" name="_template" value="custom" />
+              
+              {/* HTML template definition */}
+              <input type="hidden" name="_message" value="
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333333; }
+    .email-container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { text-align: center; padding: 20px 0; }
+    .header img { max-width: 250px; height: auto; }
+    .title { background-color: #1E73BE; color: white; padding: 15px; border-radius: 5px 5px 0 0; }
+    .title h1 { margin: 0; font-size: 22px; }
+    .content { background-color: #f9f9f9; padding: 20px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
+    .field { margin-bottom: 15px; }
+    .field-label { font-weight: bold; color: #0F3B60; margin-bottom: 5px; }
+    .field-value { padding: 8px; background-color: white; border: 1px solid #e3e3e3; border-radius: 4px; }
+    .meta { font-size: 12px; background-color: #f0f4f8; border-radius: 0 0 5px 5px; padding: 10px; border: 1px solid #ddd; border-top: none; }
+    .meta p { margin: 5px 0; color: #666; }
+    .footer { text-align: center; padding: 20px; font-size: 12px; color: #888; }
+    .cta { text-align: center; margin: 25px 0; }
+    .cta-button { background-color: #3a9abc; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; }
+  </style>
+</head>
+<body>
+  <div class='email-container'>
+    <div class='header'>
+      <img src='https://www.sharkduct.com/uploads/afc828f1-634d-4a54-b802-cecb90b8885d.png' alt='Shark Duct Cleaning' />
+    </div>
+    
+    <div class='title'>
+      <h1>🔔 New Inspection Request</h1>
+    </div>
+    
+    <div class='content'>
+      <div class='field'>
+        <div class='field-label'>Name:</div>
+        <div class='field-value'>{{name}}</div>
+      </div>
+      
+      <div class='field'>
+        <div class='field-label'>Phone Number:</div>
+        <div class='field-value'>{{phone}}</div>
+      </div>
+      
+      <div class='field'>
+        <div class='field-label'>Email Address:</div>
+        <div class='field-value'>{{email}}</div>
+      </div>
+      
+      <div class='field'>
+        <div class='field-label'>Address:</div>
+        <div class='field-value'>{{address}}</div>
+      </div>
+      
+      <div class='field'>
+        <div class='field-label'>Location:</div>
+        <div class='field-value'>{{location}}</div>
+      </div>
+      
+      <div class='field'>
+        <div class='field-label'>Urgency:</div>
+        <div class='field-value'>{{urgency}}</div>
+      </div>
+      
+      <div class='field'>
+        <div class='field-label'>Additional Message:</div>
+        <div class='field-value'>{{message}}</div>
+      </div>
+      
+      <div class='cta'>
+        <a href='tel:8778888431' class='cta-button'>Call Customer Now</a>
+      </div>
+    </div>
+    
+    <div class='meta'>
+      <p><strong>Form Location:</strong> {{form_location}}</p>
+      <p><strong>Submission Date:</strong> {{submission_date}} (US Central Time)</p>
+      <p><strong>IP Address:</strong> {{_ip}}</p>
+      <p><strong>User Agent:</strong> {{_user_agent}}</p>
+    </div>
+    
+    <div class='footer'>
+      <p>© 2023 Shark Duct Cleaning | This is an automated notification</p>
+    </div>
+  </div>
+</body>
+</html>" />
               
               {/* Auto-response to the person who submitted the form */}
               <input type="hidden" name="_autoresponse" value="Thank you for requesting an inspection from Shark Duct Cleaning! We've received your request and will contact you shortly to confirm your appointment. For immediate assistance, please call us at (877) 888-8431." />
               
-              {/* Make form data readable in notification email */}
-              <input type="hidden" name="_format" value="plain" />
-              
               {/* User info for form metadata */}
               <input type="hidden" name="form_location" value="Hero Section - Homepage" />
-              <input type="hidden" name="submission_date" value={new Date().toISOString()} />
+              <input type="hidden" name="submission_date" value={new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })} />
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
