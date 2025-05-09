@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Phone, Heart } from 'lucide-react';
@@ -130,7 +131,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            Made with <Heart className="h-4 w-4 mx-1 text-red-500 inline" /> by{" "}
+            Made with <Heart className="h-4 w-4 mx-1 text-red-500 inline" fill="currentColor" /> by{" "}
             <a 
               href="https://gettmarketing.com" 
               target="_blank" 
