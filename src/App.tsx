@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -9,6 +8,7 @@ import Index from "./pages/Index";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import ThankYouPage from "./pages/ThankYouPage";
 
 // ScrollToTop component to ensure pages load at the top
 const ScrollToTop = () => {
@@ -41,6 +41,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/thank-you" element={<ThankYouPage />} />
             {/* Redirect /edit route to main page to prevent white screen */}
             <Route path="/edit/*" element={<Navigate to="/" replace />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
