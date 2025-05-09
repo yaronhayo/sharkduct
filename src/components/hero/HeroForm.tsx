@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { Shield, CalendarDays } from 'lucide-react';
+import { Shield, CalendarDays, MapPin, Home } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 
 const HeroForm = () => {
@@ -13,12 +13,13 @@ const HeroForm = () => {
     phone: '',
     email: '',
     address: '',
-    city: '',
-    state: '',
-    zipCode: '',
+    apt: '',
+    gateCode: '',
     urgency: '',
     message: ''
   });
+  
+  const [showAdditionalFields, setShowAdditionalFields] = useState(false);
   const [formErrors, setFormErrors] = useState<{[key: string]: string}>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ message: string, type: 'success' | 'error' | '' }>({ message: '', type: '' });
@@ -31,6 +32,11 @@ const HeroForm = () => {
       ...formData,
       [fieldId]: value
     });
+    
+    // Show additional fields when address has some content
+    if (fieldId === 'address' && value.trim().length > 0 && !showAdditionalFields) {
+      setShowAdditionalFields(true);
+    }
     
     // Clear validation error when user starts typing
     if (formErrors[fieldId]) {
@@ -61,9 +67,9 @@ const HeroForm = () => {
       errors.phone = 'Please enter a valid phone number';
     }
     
-    // Zip code validation
-    if (formData.zipCode && !/^\d{5}(-\d{4})?$/.test(formData.zipCode)) {
-      errors.zipCode = 'Please enter a valid ZIP code';
+    // Address validation
+    if (!formData.address.trim()) {
+      errors.address = 'Address is required';
     }
     
     setFormErrors(errors);
@@ -234,59 +240,56 @@ const HeroForm = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="hero-address" className="text-shark-darkBlue font-medium text-sm">Address</Label>
-                <Input 
-                  id="hero-address"
-                  name="address"
-                  type="text" 
-                  placeholder="Enter your address" 
-                  className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue focus:border-transparent transition-all duration-200"
-                  value={formData.address}
-                  onChange={handleChange}
-                />
+                <Label htmlFor="hero-address" className="text-shark-darkBlue font-medium text-sm">Street Address<span className="text-red-500">*</span></Label>
+                <div className="relative">
+                  <Home className="absolute left-3 top-3.5 h-5 w-5 text-gray-400" />
+                  <Input 
+                    id="hero-address"
+                    name="address"
+                    type="text" 
+                    placeholder="Enter your street address" 
+                    className={`w-full pl-10 pr-4 py-3 rounded-md border ${formErrors.address ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-shark-blue focus:border-transparent transition-all duration-200`}
+                    value={formData.address}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                {formErrors.address && <p className="text-red-500 text-xs mt-1">{formErrors.address}</p>}
               </div>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="space-y-2 col-span-2">
-                  <Label htmlFor="hero-city" className="text-shark-darkBlue font-medium text-sm">City</Label>
-                  <Input 
-                    id="hero-city"
-                    name="city"
-                    type="text" 
-                    placeholder="City" 
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue focus:border-transparent transition-all duration-200"
-                    value={formData.city}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="hero-state" className="text-shark-darkBlue font-medium text-sm">State</Label>
-                  <select 
-                    id="hero-state"
-                    name="state"
-                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue focus:border-transparent transition-all duration-200 bg-white"
-                    value={formData.state}
-                    onChange={handleChange}
-                  >
-                    <option value="">State</option>
-                    <option value="TX">TX</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="hero-zipCode" className="text-shark-darkBlue font-medium text-sm">ZIP</Label>
-                  <Input 
-                    id="hero-zipCode"
-                    name="zipCode"
-                    type="text" 
-                    placeholder="ZIP Code" 
-                    className={`w-full px-4 py-3 rounded-md border ${formErrors.zipCode ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-shark-blue focus:border-transparent transition-all duration-200`}
-                    value={formData.zipCode}
-                    onChange={handleChange}
-                  />
-                  {formErrors.zipCode && <p className="text-red-500 text-xs mt-1">{formErrors.zipCode}</p>}
-                </div>
-              </div>
+              {showAdditionalFields && (
+                <motion.div 
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="space-y-2">
+                    <Label htmlFor="hero-apt" className="text-shark-darkBlue font-medium text-sm">Apt/Suite Number (Optional)</Label>
+                    <Input 
+                      id="hero-apt"
+                      name="apt"
+                      type="text" 
+                      placeholder="Apartment or Suite #" 
+                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue focus:border-transparent transition-all duration-200"
+                      value={formData.apt}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="hero-gateCode" className="text-shark-darkBlue font-medium text-sm">Gate Code (Optional)</Label>
+                    <Input 
+                      id="hero-gateCode"
+                      name="gateCode"
+                      type="text" 
+                      placeholder="Gate or entry code" 
+                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-shark-blue focus:border-transparent transition-all duration-200"
+                      value={formData.gateCode}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </motion.div>
+              )}
               
               <div className="space-y-2">
                 <Label htmlFor="hero-urgency" className="text-shark-darkBlue font-medium text-sm">How Soon?</Label>
