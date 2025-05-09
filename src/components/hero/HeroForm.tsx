@@ -78,11 +78,30 @@ const HeroForm = () => {
               onSubmit={handleSubmit}
             >
               {/* FormSubmit.co configuration options */}
-              <input type="hidden" name="_subject" value="New Inspection Request from SharkDuct.com" />
-              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="🔔 New Inspection Request from ${name} - SharkDuct.com" />
               <input type="hidden" name="_cc" value="yaron@gettmarketing.com,sandrahmarketing@gmail.com" />
-              {/* If you want to redirect after submission, uncomment and customize: */}
-              {/* <input type="hidden" name="_next" value="https://www.sharkduct.com/thank-you" /> */}
+              
+              {/* Spam prevention - honeypot field */}
+              <input type="text" name="_honey" style={{display: 'none'}} />
+              
+              {/* Disable captcha */}
+              <input type="hidden" name="_captcha" value="false" />
+              
+              {/* Redirect after submission */}
+              <input type="hidden" name="_next" value="https://www.sharkduct.com/thank-you" />
+              
+              {/* Template customization for better-looking emails */}
+              <input type="hidden" name="_template" value="box" />
+              
+              {/* Auto-response to the person who submitted the form */}
+              <input type="hidden" name="_autoresponse" value="Thank you for requesting an inspection from Shark Duct Cleaning! We've received your request and will contact you shortly to confirm your appointment. For immediate assistance, please call us at (877) 888-8431." />
+              
+              {/* Make form data readable in notification email */}
+              <input type="hidden" name="_format" value="plain" />
+              
+              {/* User info for form metadata */}
+              <input type="hidden" name="form_location" value="Hero Section - Homepage" />
+              <input type="hidden" name="submission_date" value={new Date().toISOString()} />
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
