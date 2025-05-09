@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, CalendarDays } from 'lucide-react';
@@ -15,11 +14,10 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils";
 
-// Use the uploaded logo image
-const logoImage = "/lovable-uploads/afc828f1-634d-4a54-b802-cecb90b8885d.png";
-
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const logoImage = "/uploads/afc828f1-634d-4a54-b802-cecb90b8885d.png";
 
   useEffect(() => {
     const handleScroll = () => {

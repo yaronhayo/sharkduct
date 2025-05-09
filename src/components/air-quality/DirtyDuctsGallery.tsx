@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Carousel,
@@ -13,25 +12,30 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const dirtyDuctsImages = [
   {
-    src: "/lovable-uploads/b588b0a2-1c04-4402-b91d-f3829d27b3af.png",
-    alt: "Dirty air duct filled with dust and debris"
+    id: 1,
+    src: "/uploads/b588b0a2-1c04-4402-b91d-f3829d27b3af.png",
+    alt: "Extremely dirty air duct before cleaning",
   },
   {
-    src: "/lovable-uploads/e5b29d7b-91b5-4dde-be9f-8a49e3e7d832.png",
-    alt: "Inside view of contaminated air duct"
+    id: 2,
+    src: "/uploads/e5b29d7b-91b5-4dde-be9f-8a49e3e7d832.png",
+    alt: "Accumulated dust and debris in ventilation shaft",
   },
   {
-    src: "/lovable-uploads/bfb901ec-4c7b-425b-ad03-f804fc2bcd70.png",
-    alt: "Dusty HVAC system with buildup"
+    id: 3,
+    src: "/uploads/bfb901ec-4c7b-425b-ad03-f804fc2bcd70.png",
+    alt: "Mold growth visible inside an air duct",
   },
   {
-    src: "/lovable-uploads/bce836e1-2e33-4b4d-bce7-21e986dfc1c7.png",
-    alt: "Vent with significant dust accumulation"
+    id: 4,
+    src: "/uploads/bce836e1-2e33-4b4d-bce7-21e986dfc1c7.png",
+    alt: "Clogged air vent with thick layer of dust",
   },
   {
-    src: "/lovable-uploads/f6932080-b501-46ee-9cfd-f19a047456e7.png",
-    alt: "Air duct with severe contamination"
-  }
+    id: 5,
+    src: "/uploads/f6932080-b501-46ee-9cfd-f19a047456e7.png",
+    alt: "Close-up of contaminants in ductwork",
+  },
 ];
 
 const DirtyDuctsGallery: React.FC = () => {

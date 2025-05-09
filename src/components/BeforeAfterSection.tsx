@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -7,16 +6,16 @@ const BeforeAfterSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Air Duct Cleaning",
-      description: "Removal of mold, dust, and debris from ventilation systems",
-      image: "/lovable-uploads/5dc06ef1-b52b-4d1c-b35f-727b582b1191.png",
+      title: "Before",
+      description: "Dirty and clogged air ducts before our cleaning service.",
+      image: "/uploads/5dc06ef1-b52b-4d1c-b35f-727b582b1191.png",
       alt: "Air duct cleaning before and after comparison"
     },
     {
       id: 2,
-      title: "HVAC System Cleaning",
-      description: "Professional cleaning of HVAC vents and components",
-      image: "/lovable-uploads/d18f5eba-36f7-447e-a264-05bca3631008.png",
+      title: "After",
+      description: "Clean and efficient air ducts after our professional cleaning.",
+      image: "/uploads/d18f5eba-36f7-447e-a264-05bca3631008.png",
       alt: "HVAC system before and after professional cleaning"
     }
   ];
