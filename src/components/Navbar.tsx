@@ -15,6 +15,9 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils";
 
+// Import logo image to ensure it's included in the build
+import logoImage from '/src/assets/shark-duct-logo.png';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -73,7 +76,7 @@ const Navbar = () => {
           <a href="/" className="flex items-center">
             {/* Logo */}
             <img 
-              src="https://sharkduct.com/wp-content/uploads/2023/10/shark-duct.png" 
+              src={logoImage} 
               alt="Shark Duct Cleaning" 
               className="h-16 md:h-20 mr-3" 
             />

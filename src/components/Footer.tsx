@@ -5,6 +5,9 @@ import { Phone, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+// Import logo image to ensure it's included in the build
+import logoImage from '/src/assets/shark-duct-logo.png';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
@@ -46,7 +49,7 @@ const Footer = () => {
           >
             <Link to="/">
               <img 
-                src="https://sharkduct.com/wp-content/uploads/2023/10/shark-duct.png" 
+                src={logoImage} 
                 alt="Shark Duct Cleaning" 
                 className="h-16 md:h-20" 
               />
