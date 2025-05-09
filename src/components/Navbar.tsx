@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils";
 
-// Import logo image to ensure it's included in the build
-import logoImage from '/src/assets/shark-duct-logo.png';
+// Import logo image with the correct relative path
+import logoImage from '../assets/shark-duct-logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

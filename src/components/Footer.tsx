@@ -5,8 +5,8 @@ import { Phone, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-// Import logo image to ensure it's included in the build
-import logoImage from '/src/assets/shark-duct-logo.png';
+// Import logo image with the correct relative path
+import logoImage from '../assets/shark-duct-logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
