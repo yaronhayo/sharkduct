@@ -159,111 +159,34 @@ const HeroForm = () => {
               <input type="hidden" name="_from_domain" value="SharkDuct.com Air Duct Cleaning" />
               
               {/* Custom HTML template */}
-              <input type="hidden" name="_template" value="custom" />
+              <input type="hidden" name="_template" value="box" />
               
-              {/* HTML template definition */}
-              <input type="hidden" name="_message" value="
-<html>
-<head>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333333; }
-    .email-container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { text-align: center; padding: 20px 0; }
-    .header img { max-width: 250px; height: auto; }
-    .title { background-color: #1E73BE; color: white; padding: 15px; border-radius: 5px 5px 0 0; }
-    .title h1 { margin: 0; font-size: 22px; }
-    .content { background-color: #f9f9f9; padding: 20px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
-    .field { margin-bottom: 15px; }
-    .field-label { font-weight: bold; color: #0F3B60; margin-bottom: 5px; }
-    .field-value { padding: 8px; background-color: white; border: 1px solid #e3e3e3; border-radius: 4px; }
-    .meta { font-size: 12px; background-color: #f0f4f8; border-radius: 0 0 5px 5px; padding: 10px; border: 1px solid #ddd; border-top: none; }
-    .meta p { margin: 5px 0; color: #666; }
-    .footer { text-align: center; padding: 20px; font-size: 12px; color: #888; }
-    .cta { text-align: center; margin: 25px 0; }
-    .cta-button { background-color: #3a9abc; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; }
-  </style>
-</head>
-<body>
-  <div class='email-container'>
-    <div class='header'>
-      <img src='https://www.sharkduct.com/uploads/afc828f1-634d-4a54-b802-cecb90b8885d.png' alt='Shark Duct Cleaning' />
-    </div>
-    
-    <div class='title'>
-      <h1>🔔 New Inspection Request</h1>
-    </div>
-    
-    <div class='content'>
-      <div class='field'>
-        <div class='field-label'>Name:</div>
-        <div class='field-value'>{{name}}</div>
-      </div>
-      
-      <div class='field'>
-        <div class='field-label'>Phone Number:</div>
-        <div class='field-value'>{{phone}}</div>
-      </div>
-      
-      <div class='field'>
-        <div class='field-label'>Email Address:</div>
-        <div class='field-value'>{{email}}</div>
-      </div>
-      
-      <div class='field'>
-        <div class='field-label'>Address:</div>
-        <div class='field-value'>{{address}}</div>
-      </div>
-      
-      <div class='field'>
-        <div class='field-label'>City:</div>
-        <div class='field-value'>{{city}}</div>
-      </div>
-      
-      <div class='field'>
-        <div class='field-label'>State:</div>
-        <div class='field-value'>{{state}}</div>
-      </div>
-      
-      <div class='field'>
-        <div class='field-label'>ZIP Code:</div>
-        <div class='field-value'>{{zipCode}}</div>
-      </div>
-      
-      <div class='field'>
-        <div class='field-label'>Urgency:</div>
-        <div class='field-value'>{{urgency}}</div>
-      </div>
-      
-      <div class='field'>
-        <div class='field-label'>Additional Message:</div>
-        <div class='field-value'>{{message}}</div>
-      </div>
-      
-      <div class='cta'>
-        <a href='tel:8778888431' class='cta-button'>Call Customer Now</a>
-      </div>
-    </div>
-    
-    <div class='meta'>
-      <p><strong>Form Location:</strong> {{form_location}}</p>
-      <p><strong>Submission Date:</strong> {{submission_date}}</p>
-      <p><strong>IP Address:</strong> {{_ip}}</p>
-      <p><strong>User Agent:</strong> {{_user_agent}}</p>
-    </div>
-    
-    <div class='footer'>
-      <p>© 2023 Shark Duct Cleaning | This is an automated notification</p>
-    </div>
-  </div>
-</body>
-</html>" />
+              {/* HTML template definition - using different approach */}
+              <input type="hidden" name="_email-template" value="table" />
+              <input type="hidden" name="_email-style" value="background-color: #ffffff; font-family: Arial, sans-serif; color: #333333; padding: 20px; border-radius: 10px;" />
+              <input type="hidden" name="_email-header-image" value="https://sharkduct.com/uploads/afc828f1-634d-4a54-b802-cecb90b8885d.png" />
+              <input type="hidden" name="_email-header-style" value="padding: 20px; background-color: #1E73BE; text-align: center;" />
+              <input type="hidden" name="_email-title-style" value="color: #0F3B60; font-size: 24px; font-weight: bold; margin-top: 20px;" />
+              <input type="hidden" name="_email-intro-style" value="font-size: 16px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px;" />
+              <input type="hidden" name="_email-table-style" value="width: 100%; border-collapse: collapse;" />
+              <input type="hidden" name="_email-table-header-style" value="background-color: #3a9abc; color: white; text-align: left; padding: 10px; font-weight: bold;" />
+              <input type="hidden" name="_email-table-cell-style" value="border: 1px solid #eee; padding: 12px;" />
+              <input type="hidden" name="_email-button-style" value="background-color: #3a9abc; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px;" />
+              <input type="hidden" name="_email-signature-style" value="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; font-size: 14px; color: #777;" />
+              
+              {/* Custom title and intro message */}
+              <input type="hidden" name="_email-title" value="🔔 New Inspection Request" />
+              <input type="hidden" name="_email-intro" value="A new inspection request has been submitted through the SharkDuct.com website. Please review these details and contact the customer promptly:" />
+              <input type="hidden" name="_email-button" value="Call Customer: (877) 888-8431" />
+              <input type="hidden" name="_email-button-url" value="tel:8778888431" />
+              <input type="hidden" name="_email-signature" value="© 2023 Shark Duct Cleaning | This is an automated notification | www.sharkduct.com" />
+              
+              {/* Add metadata as extra form fields to display in the email */}
+              <input type="hidden" name="meta_form_source" value="SharkDuct Website - Hero Form" />
+              <input type="hidden" name="meta_submission_time" value={getFormattedDate()} />
               
               {/* Auto-response to the person who submitted the form */}
               <input type="hidden" name="_autoresponse" value="Thank you for requesting an inspection from Shark Duct Cleaning! We've received your request and will contact you shortly to confirm your appointment. For immediate assistance, please call us at (877) 888-8431." />
-              
-              {/* User info for form metadata */}
-              <input type="hidden" name="form_location" value="Hero Section - Homepage" />
-              <input type="hidden" name="submission_date" value={getFormattedDate()} />
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
