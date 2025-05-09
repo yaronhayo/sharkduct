@@ -27,5 +27,16 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: 'es2020',
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['@radix-ui/react-slot', '@radix-ui/react-label', '@radix-ui/react-tooltip'],
+          animation: ['framer-motion'],
+          vendor: ['lucide-react', 'sonner'],
+        }
+      }
+    }
   },
 }));

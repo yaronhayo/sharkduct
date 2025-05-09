@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import DirtyDuctsGallery from './air-quality/DirtyDuctsGallery';
@@ -107,8 +106,8 @@ const AirQualitySection = () => {
         {/* Air Quality Facts */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-16">
           {facts.map((fact, index) => (
-            <Card key={index} className="bg-white shadow-lg overflow-hidden border-0 card-hover">
-              <CardContent className="p-6 text-center">
+            <Card key={index} className="bg-white shadow-lg overflow-hidden border-0 card-hover h-full">
+              <CardContent className="p-6 text-center flex flex-col justify-center h-full">
                 <div className="text-4xl md:text-5xl font-bold text-shark-blue mb-2">{fact.stat}</div>
                 <p className="text-gray-600">{fact.description}</p>
               </CardContent>

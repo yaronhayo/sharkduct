@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -87,8 +86,8 @@ const WhyChooseUs = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
-            <Card key={index} className="bg-white/10 backdrop-blur-lg border-0 shadow-xl hover:bg-white/20 transition-all duration-300">
-              <CardContent className="p-6 flex flex-col items-center">
+            <Card key={index} className="bg-white/10 backdrop-blur-lg border-0 shadow-xl hover:bg-white/20 transition-all duration-300 h-full">
+              <CardContent className="p-6 flex flex-col items-center h-full">
                 <div className="mb-4 flex justify-center">{reason.icon}</div>
                 <h3 className="text-xl font-bold mb-3 text-white text-center">{reason.title}</h3>
                 <p className="text-white/80 text-center">{reason.description}</p>

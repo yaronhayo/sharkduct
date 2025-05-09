@@ -21,7 +21,7 @@ const BeforeAfterSection = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-gray-50 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="section-title">Real Results</h2>
         <p className="section-subtitle mb-12">
@@ -30,7 +30,7 @@ const BeforeAfterSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden card-hover shadow-lg">
+            <Card key={project.id} className="overflow-hidden card-hover shadow-lg h-full">
               <div className="p-6 bg-shark-blue text-white">
                 <h3 className="text-xl font-bold">{project.title}</h3>
                 <p className="text-sm text-gray-100">{project.description}</p>
@@ -56,7 +56,7 @@ const BeforeAfterSection = () => {
           </p>
           <a 
             href="#contact" 
-            className="gradient-btn inline-block"
+            className="gradient-btn inline-block bg-shark-accent hover:bg-shark-darkBlue text-white px-6 py-3 rounded-md shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Schedule Your Cleaning
           </a>

@@ -1,11 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
+  CarouselPrevious,
+  type CarouselApi
 } from '@/components/ui/carousel';
 import ReviewCard from './reviews/ReviewCard';
 import ReviewDots from './reviews/ReviewDots';
@@ -13,7 +13,7 @@ import RatingOverview from './reviews/RatingOverview';
 import { reviews } from './reviews/types';
 
 const ReviewsCarousel = () => {
-  const [api, setApi] = useState<any>();
+  const [api, setApi] = useState<CarouselApi | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -87,6 +87,7 @@ const ReviewsCarousel = () => {
             opts={{
               align: "start",
               loop: true,
+              slidesToScroll: isMobile ? 1 : 3,
             }}
             onMouseEnter={() => handleUserInteraction()}
             onMouseLeave={() => setIsAutoPlaying(true)}
@@ -95,8 +96,10 @@ const ReviewsCarousel = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {reviews.map((review, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/3">
-                  <ReviewCard review={review} />
+                <CarouselItem key={index} className="pl-2 md:pl-4 xs:basis-full sm:basis-1/2 md:basis-1/3 h-full">
+                  <div className="h-full">
+                    <ReviewCard review={review} />
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
