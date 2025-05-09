@@ -1,12 +1,11 @@
-
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Phone, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-// Use a placeholder image until the actual logo is provided
-const logoImage = "/placeholder.svg";
+// Use the uploaded logo image
+const logoImage = "/lovable-uploads/afc828f1-634d-4a54-b802-cecb90b8885d.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

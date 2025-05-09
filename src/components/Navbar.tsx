@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils";
 
-// Use a placeholder image until the actual logo is provided
-const logoImage = "/placeholder.svg";
+// Use the uploaded logo image
+const logoImage = "/lovable-uploads/afc828f1-634d-4a54-b802-cecb90b8885d.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
