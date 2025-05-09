@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils";
 
-// Import logo image with the correct relative path
-import logoImage from '../assets/shark-duct-logo.png';
+// Use a placeholder image until the actual logo is provided
+const logoImage = "/placeholder.svg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

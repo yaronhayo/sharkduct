@@ -5,8 +5,8 @@ import { Phone, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-// Import logo image with the correct relative path
-import logoImage from '../assets/shark-duct-logo.png';
+// Use a placeholder image until the actual logo is provided
+const logoImage = "/placeholder.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
